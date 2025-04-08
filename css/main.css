@@ -142,9 +142,9 @@ main {
 .profile-image {
     width: 200px;
     height: 200px;
-    border-radius: 50%;
+    border-radius: 12px;
     object-fit: cover;
-    border: 5px solid var(--border-primary-color);
+    border: 5px solid var(--border-color);
     box-shadow: var(--shadow);
 }
 .profile-title {
@@ -430,8 +430,10 @@ main {
 
 .skills-container {
     display: flex;
-    grid-template-rows: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-rows: repeat(auto-fill, minmax(300px, 1fr));
     gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .skill-category {
@@ -606,6 +608,9 @@ textarea.form-control {
     to { opacity: 1; }
 }
 @media (max-width: 768px) {
+    .name-fields {
+        flex-direction: column;
+    }
     .tab-buttons {
         width: 100%;
         min-width: auto;
