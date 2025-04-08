@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Портфолио Oleg Derevianko</title>
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Shantell+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+
+    <main class="main">
+        
+        <div class="container">
+            <div class="theme-container">
+                <div class="toggle-container">
+                    <button class="theme-toggle" id="themeToggle">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </div> 
+            </div>         
+            
+            <section class="profile-section">
+                <div class="social-links">
+                    <a href="https://github.com/OlegDerevianko" class="social-link" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/oleg-derevianko-s/" class="social-link"target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="viber://chat?number=%2B380632537461" class="social-link"target="_blank"><i class="fab fa-viber"></i></a>
+                    <a href="tg://resolve?domain=@Azzruell" class="social-link"target="_blank"><i class="fab fa-telegram"></i></a>
+                    <a href="https://www.instagram.com/oleg.derevianko.s/" class="social-link"target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="whatsapp://send?phone=+380632537461" class="social-link"target="_blank"><i class="fab fa-whatsapp"></i></a>
+                </div>
+                
+                <div class="profile-developer">
+                    <img src="./images/photo.png" alt="Фото разработчика" class="profile-image">
+                    <div class="profile-title">
+                        <h1 class="profile-name">Oleg Derevianko</h1>
+                        <p class="profile-job">Web Developer</p>
+                    </div>
+                </div>
+                
+                
+                
+                <div class="action-buttons">
+                    <button id="contactMeBtn" class="btn btn-primary">Contact me</button>
+                    <button class="btn btn-secondary">-----</button>
+                </div>
+                <div class="contact-links">
+                    <div class="contact-item">
+                        <a href="mailto:oleg.derevianko.s@gmail.com" class="contact-link">
+                            <i class="fas fa-envelope"></i>
+                            <span class="contact-tooltip">oleg.derevianko.s@gmail.com</span>
+                        </a>
+                    </div>
+                    <div class="contact-item">
+                        <a href="tel:+380632537461" class="contact-link">
+                            <i class="fas fa-phone"></i>
+                            <span class="contact-tooltip">+380632537461</span>
+                        </a>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="tab-section">
+                <div class="tab-buttons">
+                    <button class="tab-btn active" data-tab="portfolio">Portfolio</button>
+                    <button class="tab-btn" data-tab="skills">Skills</button>
+                </div>
+                
+                <div class="tab-content active" id="portfolio">
+                    <div class="portfolio-grid">
+                        <div class="portfolio-item">
+                            <img src="./images/icecream.png" alt="Проект 1" class="portfolio-image">
+                            <div class="portfolio-overlay">
+                                <h3>IceCream</h3>
+                                <p>[HTML, SASS, Parcel, JS]</p>
+                                <p>Ice company website with responsive layout,
+                                    burger menu, modal window and attractive
+                                    design. <br>Team project. Role: Developer</p>
+                                <a href="https://olegderevianko.github.io/IceCream_team_project/" class="portfolio-link-btn" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                        
+                        <div class="portfolio-item">
+                            <img src="./images/burger.png" alt="Проект 2" class="portfolio-image">
+                            <div class="portfolio-overlay">
+                                <h3>Your Meal</h3>
+                                <p>[HTML, SASS, JS]</p>
+                                <p>A website with a responsive layout, modals.
+                                    <br>Role: Developer.</p>
+                                <a href="https://olegderevianko.github.io/Burger/" class="portfolio-link-btn" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+                            </div>                            
+                        </div>
+                        
+                        <div class="portfolio-item">
+                            <img src="./images/realestate.png" alt="Проект 3" class="portfolio-image">
+                            <div class="portfolio-overlay">
+                                <h3>Real Estate</h3>
+                                <p>[HTML, SASS, JS]</p>
+                                <p>A multipage website with a adaptive layout, burger
+                                    menu, sliders. <br>Role: Developer.</p>
+                                <a href="https://olegderevianko.github.io/Real_Estate/" class="portfolio-link-btn" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+    
+                        <div class="portfolio-item">
+                            <img src="./images/mountain.png" alt="Проект 4" class="portfolio-image">
+                            <div class="portfolio-overlay">
+                                <h3>Beau Mountain</h3>
+                                <p>[HTML, CSS]</p>
+                                <p>Simple landing page. <br>Role: Developer. </p>
+                                <a href="https://olegderevianko.github.io/Beau_mountain_landing/" class="portfolio-link-btn" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+    
+                        <div class="portfolio-item">
+                            <img src="./images/eduman.png" alt="Проект 5" class="portfolio-image">
+                            <div class="portfolio-overlay">
+                                <h3>Edu Man</h3>
+                                <p>[HTML, SASS]</p>
+                                <p>Simple landing page. <br>Role: Developer. </p>
+                                <a href="https://olegderevianko.github.io/Edu_Man_landing/" class="portfolio-link-btn" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+    
+                        <div class="portfolio-item">
+                            <img src="./images/streamvibe.png" alt="Проект 6" class="portfolio-image">
+                            <div class="portfolio-overlay">
+                                <h3>Stream Vibe</h3>
+                                <p>[HTML, SASS]</p>
+                                <p>A multipage website with a adaptive layout. <br>Role: Developer.</p>
+                                <a href="https://olegderevianko.github.io/Stream_VIbe/" class="portfolio-link-btn" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                        <div class="portfolio-item">
+                            <img src="./images/inferno.png" alt="Проект 7" class="portfolio-image">
+                            <div class="portfolio-overlay">
+                                <h3>Inferno</h3>
+                                <p>[HTML, CSS]</p>
+                                <p>Simple landing page. <br>Role: Developer. </p>
+                                <a href="https://olegderevianko.github.io/Inferno_landing/" class="portfolio-link-btn" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                        <div class="portfolio-item">
+                            <img src="./images/arthome.png" alt="Проект 7" class="portfolio-image">
+                            <div class="portfolio-overlay">
+                                <h3>ArtHome</h3>
+                                <p>[HTML, CSS, JS]</p>
+                                <p>Simple landing page with modals, contact form, sliders. <br>Role: Developer. </p>
+                                <a href="https://olegderevianko.github.io/ArtHome/" class="portfolio-link-btn" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tab-content" id="skills">
+                    <div class="skills-container">
+                        <div class="skill-category">
+                            <h3 class="skill-category-title">Frontend</h3>
+                            <div class="skill-item">
+                                <div class="skill-name">
+                                    <span>HTML/CSS</span>
+                                    <span>95%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 95%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-name">
+                                    <span>JavaScript</span>
+                                    <span>35%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 35%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-name">
+                                    <span>React</span>
+                                    <span>0%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 0%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-name">
+                                    <span>Vue.js</span>
+                                    <span>0%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 0%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-category">
+                            <h3 class="skill-category-title">Backend</h3>
+                            <div class="skill-item">
+                                <div class="skill-name">
+                                    <span>Node.js</span>
+                                    <span>35%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 35%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-name">
+                                    <span>Express</span>
+                                    <span>0%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 0%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-name">
+                                    <span>Python/Django</span>
+                                    <span>0%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 0%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-name">
+                                    <span>PHP/Laravel</span>
+                                    <span>0%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 0%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-category">
+                            <h3 class="skill-category-title">Базы данных</h3>
+                            <div class="skill-item">
+                                <div class="skill-name">
+                                    <span>MongoDB</span>
+                                    <span>0%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 0%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-name">
+                                    <span>MySQL</span>
+                                    <span>0%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 0%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-name">
+                                    <span>PostgreSQL</span>
+                                    <span>0%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 0%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-name">
+                                    <span>Redis</span>
+                                    <span>0%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 0%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    <div class="modal-overlay" id="contactModal">
+        <div class="modal-container">
+            <button class="modal-close" id="modalClose">&times;</button>
+            <div class="modal-content">
+                <h2 class="form-title">Contact Us</h2>
+                <form id="contactForm">
+                    <div class="name-fields">
+                        <div class="form-group">
+                            <label for="firstName">First Name</label>
+                            <input type="text" id="firstName" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last Name</label>
+                            <input type="text" id="lastName" class="form-control" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" class="form-control" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="./js.js"></script>
+    <script src="./contact_modal.js"></script>
+</body>
+</html>
