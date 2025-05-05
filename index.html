@@ -2,6 +2,11 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
+    <meta name="description" content="Портфолио Oleg Derevianko - Frontend Developer">
+    <meta name="keywords" content="frontend, разработчик, портфолио, HTML, CSS, JavaScript">
+    <meta property="og:title" content="Портфолио Oleg Derevianko">
+    <meta property="og:description" content="Frontend Developer Portfolio">
+    <meta property="og:image" content="./images/photo.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Портфолио Oleg Derevianko</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -52,31 +57,38 @@
                     <img src="./images/photo.png" alt="Фото разработчика" class="profile-image">
                     <div class="profile-title">
                         <h1 class="profile-name">Oleg Derevianko</h1>
-                        <p class="profile-job">Frontend Developer</p>
+                        <p class="profile-job"><span>Front-end</span> Developer</p>
                     </div>
                 </div>
-                
-                
                 
                 <div class="action-buttons">
                     <button id="contactMeBtn" class="btn btn-primary">Contact me</button>
                     <a href="./Oleg_Derevianko_CV.pdf" download="Oleg_Derevianko_CV.pdf">
-                        <button class="btn btn-secondary">Download CV</button>
+                        <button class="btn btn-secondary">Download CV<i class="fa-solid fa-download"></i></button>
                     </a>
                 </div>
                 
             </section>
             
             <section class="tab-section">
+                
                 <div class="tab-buttons">
-                    <button class="tab-btn active" data-tab="portfolio">Portfolio</button>
-                    <button class="tab-btn" data-tab="skills">Skills</button>
+                    
+                    <i class="fa-brands fa-css3-alt"></i>
+                        <i class="fa-brands fa-html5"></i>
+                        <i class="fa-brands fa-square-js"></i>
+                        <i class="fa-brands fa-node"></i>
+                        <i class="fa-brands fa-sass"></i>
+                        <i class="fa-brands fa-react"></i>
+                        <i class="fa-brands fa-square-github"></i>
+                        <i class="fa-brands fa-figma"></i>
+                        <i class="fa-brands fa-bootstrap"></i>
                 </div>
                 
                 <div class="tab-content active" id="portfolio">
                     <div class="portfolio-grid">
                         <div class="portfolio-item">
-                            <img src="./images/icecream.png" alt="Проект 1" class="portfolio-image">
+                            <img src="./images/icecream.png" alt="Проект 1" class="portfolio-image" loading="lazy">
                             <div class="portfolio-overlay">
                                 <h3>IceCream</h3>
                                 <p>[HTML, SASS, Parcel, JS]</p>
@@ -88,7 +100,7 @@
                         </div>
                         
                         <div class="portfolio-item">
-                            <img src="./images/burger.png" alt="Проект 2" class="portfolio-image">
+                            <img src="./images/burger.png" alt="Проект 2" class="portfolio-image" loading="lazy">
                             <div class="portfolio-overlay">
                                 <h3>Your Meal</h3>
                                 <p>[HTML, SASS, JS]</p>
@@ -98,7 +110,7 @@
                             </div>                            
                         </div>                        
                         <div class="portfolio-item">
-                            <img src="./images/realestate.png" alt="Проект 3" class="portfolio-image">
+                            <img src="./images/realestate.png" alt="Проект 3" class="portfolio-image" loading="lazy">
                             <div class="portfolio-overlay">
                                 <h3>Real Estate</h3>
                                 <p>[HTML, SASS, JS]</p>
@@ -109,7 +121,7 @@
                         </div>
     
                         <div class="portfolio-item">
-                            <img src="./images/mountain.png" alt="Проект 4" class="portfolio-image">
+                            <img src="./images/mountain.png" alt="Проект 4" class="portfolio-image" loading="lazy">
                             <div class="portfolio-overlay">
                                 <h3>Beau Mountain</h3>
                                 <p>[HTML, CSS]</p>
@@ -118,7 +130,7 @@
                             </div>
                         </div>    
                         <div class="portfolio-item">
-                            <img src="./images/eduman.png" alt="Проект 5" class="portfolio-image">
+                            <img src="./images/eduman.png" alt="Проект 5" class="portfolio-image" loading="lazy">
                             <div class="portfolio-overlay">
                                 <h3>Edu Man</h3>
                                 <p>[HTML, SASS]</p>
@@ -127,7 +139,7 @@
                             </div>
                         </div>    
                         <div class="portfolio-item">
-                            <img src="./images/streamvibe.png" alt="Проект 6" class="portfolio-image">
+                            <img src="./images/streamvibe.png" alt="Проект 6" class="portfolio-image" loading="lazy">
                             <div class="portfolio-overlay">
                                 <h3>Stream Vibe</h3>
                                 <p>[HTML, SASS]</p>
@@ -136,7 +148,7 @@
                             </div>
                         </div>
                         <div class="portfolio-item">
-                            <img src="./images/inferno.png" alt="Проект 7" class="portfolio-image">
+                            <img src="./images/inferno.png" alt="Проект 7" class="portfolio-image" loading="lazy">
                             <div class="portfolio-overlay">
                                 <h3>Inferno</h3>
                                 <p>[HTML, CSS]</p>
@@ -145,7 +157,7 @@
                             </div>
                         </div>
                         <div class="portfolio-item">
-                            <img src="./images/arthome.png" alt="Проект 7" class="portfolio-image">
+                            <img src="./images/arthome.png" alt="Проект 7" class="portfolio-image" loading="lazy">
                             <div class="portfolio-overlay">
                                 <h3>ArtHome</h3>
                                 <p>[HTML, CSS, JS]</p>
@@ -155,7 +167,7 @@
                         </div>
                     </div>
                 </div>                
-                <div class="tab-content" id="skills">
+                <!-- <div class="tab-content" id="skills">
                     <div class="skills-container">
                         <div class="skill-category">
                             <h3 class="skill-category-title">Frontend</h3>
@@ -275,7 +287,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </section>
         </div>
     </main>
