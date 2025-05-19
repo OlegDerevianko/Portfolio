@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oleg Derevianko - Frontend Developer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        :root {
+            --github-header-bg: #24292f;
+            --github-bg: #0d1117;
+            --github-border: #30363d;
+            --github-text: #c9d1d9;
+            --github-text-secondary: #8b949e;
+            --github-accent: #58a6ff;
+            --github-green: #238636;
+            --github-green-hover: #2ea043;
+            --github-blue: #1f6feb;
+            --github-card-bg: #161b22;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--github-bg);
+            color: var(--github-text);
+            margin: 0;
+            line-height: 1.5;
+        }
+        
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 16px;
+        }
+        
+        .header {
+            background-color: var(--github-header-bg);
+            padding: 16px 0;
+            border-bottom: 1px solid var(--github-border);
+        }
+        
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .profile {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        
+        .avatar {
+            width: 100%;
+            border-radius: 50%;
+            border: 1px solid var(--github-border);
+        }
+        
+        .name {
+            font-size: 20px;
+            font-weight: 600;
+            margin: 0;
+            color: var(--github-text);
+        }
+        
+        .username {
+            font-size: 16px;
+            color: var(--github-text-secondary);
+            margin: 0;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 12px;
+            box-sizing: border-box;
+        }
+        
+        .social__link {display: flex;
+            box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    position: relative;
+    color: #9198a1;
+    background-color: transparent;
+    border: 1px solid #3d444d;
+    padding: 8px;
+    border-radius: 0.375rem;
+}
+.social__link:hover {
+    background-color: #24292E;
+}
+.social__link .tooltip {
+    font-family: 'Roboto', sans-serif;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%) translateY(0);
+    background-color: #3d444d;
+    color: white;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.375rem;
+    font-weight: 400;
+    font-size: 0.75rem;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s;
+    pointer-events: none;
+    margin-top: 15px; 
+}
+.social__link:hover .tooltip {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(100%);
+}
+        
+        .main-content {
+            display: flex;
+            gap: 16px;
+            padding: 24px 0;
+        }
+        
+        .sidebar {
+            width: 296px;
+            flex-shrink: 0;
+        }
+        
+        .profile-card {
+            background-color: var(--github-card-bg);
+            border: 1px solid var(--github-border);
+            border-radius: 6px;
+            padding: 16px;
+            margin-bottom: 16px;
+        }
+        
+        .profile-info {
+            margin-bottom: 16px;
+        }
+        
+        .profile-name {
+            font-size: 24px;
+            font-weight: 600;
+            margin: 0 0 8px 0;
+        }
+        
+        .profile-username {
+            font-size: 16px;
+            color: var(--github-text-secondary);
+            margin: 0 0 16px 0;
+        }
+        
+        .profile-bio {
+            margin: 0 0 16px 0;
+        }
+        
+        .profile-stats {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+        
+        .stat {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        
+        .stat-count {
+            font-weight: 600;
+        }
+        
+        .stat-label {
+            color: var(--github-text-secondary);
+        }
+        
+        .contact-info {
+            margin-bottom: 16px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 8px;
+        }
+        
+        .btn {
+            box-sizing: border-box;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 6px 16px;
+            border-radius: 6px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: background-color 0.2s;
+            width: 100%;
+            margin-bottom: 8px;
+        }
+        
+        .btn-primary {
+            background-color: var(--github-green);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--github-green-hover);
+        }
+        
+        .btn-secondary {
+            background-color: var(--github-card-bg);
+            color: var(--github-text);
+            border: 1px solid var(--github-border);
+        }
+        
+        .btn-secondary:hover {
+            background-color: var(--github-border);
+            border-color: var(--github-text-secondary);
+        }
+        
+        .content {
+            flex-grow: 1;
+        }
+        
+        .nav {
+            display: flex;
+            border-bottom: 1px solid var(--github-border);
+            margin-bottom: 16px;
+        }
+        
+        .nav-link {
+            padding: 16px;
+            text-decoration: none;
+            color: var(--github-text);
+            font-weight: 500;
+            border-bottom: 2px solid transparent;
+            transition: border-color 0.2s;
+        }
+        
+        .nav-link:hover {
+            border-bottom-color: var(--github-border);
+        }
+        
+        .nav-link.active {
+            border-bottom-color: var(--github-accent);
+            font-weight: 600;
+        }
+        
+        .repo-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        
+        .repo-card {
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+            background-color: var(--github-card-bg);
+            border: 1px solid var(--github-border);
+            border-radius: 6px;
+            padding: 16px;
+        }
+        
+        .repo-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+        }
+        
+        .repo-name {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--github-accent);
+            text-decoration: none;
+        }
+        
+        .repo-name:hover {
+            text-decoration: underline;
+        }
+        
+        .repo-visibility {
+            align-self: start;
+            font-size: 12px;
+            color: var(--github-text-secondary);
+            border: 1px solid var(--github-border);
+            border-radius: 12px;
+            padding: 2px 8px;
+        }
+        
+        .repo-description {
+            margin: 8px 0;
+            color: var(--github-text-secondary);
+        }
+        
+        .repo-meta {
+            display: flex;
+            gap: 16px;
+            font-size: 12px;
+            color: var(--github-text-secondary);
+        }
+        
+        .repo-language {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        
+        .language-color {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+        .language-color-yellow {            
+            background-color: #f1e05a; /* JS yellow */
+        }
+        .language-color-red {            
+            background-color: #e34c26; /* JS yellow */
+        }
+        .language-color-purple {            
+            background-color: #663399; /* JS yellow */
+        }
+        .line {
+            display: flex;
+            
+            width: 100%;
+            height: 2px;
+            background-color: var(--github-border);
+            margin: 16px 0;
+        }
+        .skills-section {
+            margin-top: 24px;
+        }
+        
+        .skills-title {
+            font-size: 16px;
+            font-weight: 600;
+            margin: 0;
+            margin-bottom: 8px;
+        }
+        
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .fa-brands {
+            position: relative;
+            font-size: 30px;
+            color: #9198a1;
+        }
+        .fa-html5:hover::after{
+            content: "HTML5";
+            position: absolute;
+            font-family: 'Roboto', sans-serif;
+            font-size: 10px;
+            font-weight: 400;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%) translateY(-10px);
+        }
+        .fa-css3-alt:hover::after{
+            content: "CSS3";
+            position: absolute;
+            font-family: 'Roboto', sans-serif;
+            font-size: 10px;
+            font-weight: 400;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%) translateY(-10px);
+        }
+        .skill-tag {
+            background-color: rgba(56, 139, 253, 0.15);
+            color: var(--github-accent);
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 12px;
+        }
+        .img {
+            
+            height: 200px;
+            border-radius: 12px;
+            border: 1px solid var(--github-border);
+        }
+        .prof {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .fa-fa {
+            color: white;
+        }
+        @media (max-width: 768px) {
+            .main-content {
+                flex-direction: column;
+            }
+            .avatar {
+                width: 50%;
+                height: 50%;
+            }
+            .img {
+                height: 150px;
+            }
+            .sidebar {
+                width: 100%;
+            }
+            
+            .header-content {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 16px;
+            }
+        }
+        @media (max-width: 1024px) {            
+            .img {
+                height: 150px;  
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container header-content">
+            <div class="profile">
+                
+                <div class="prof">
+                    <i class="fa-brands fa-fa fa-github"></i>
+                    <h1 class="name">Oleg Derevianko</h1>
+                </div>
+            </div>
+            <div class="social-links">
+                <!-- <a href="https://github.com/OlegDerevianko" class="social__link" target="_blank">
+                    <i class="fab fa-github"></i>
+                    <span class="tooltip">GitHub</span>
+                </a> -->
+                <a href="https://discordapp.com/users/356161473128693770" class="social__link"target="_blank">
+                    <i class="fab fa-discord"></i>
+                    <span class="tooltip">Discord</span>
+                </a>
+                
+                <a href="viber://chat?number=%2B380632537461" class="social__link"target="_blank">
+                    <i class="fab fa-viber"></i>
+                    <span class="tooltip">Viber</span>
+                </a>
+                <a href="tg://resolve?domain=@Azzruell" class="social__link"target="_blank">
+                    <i class="fab fa-telegram"></i>
+                    <span class="tooltip">Telegram</span>
+                </a>                    
+                
+                <a href="whatsapp://send?phone=+380632537461" class="social__link"target="_blank">
+                    <i class="fab fa-whatsapp"></i>
+                    <span class="tooltip">Whatsapp</span>
+                </a>
+            </div>
+        </div>
+    </header>
+    
+    <div class="container">
+        <div class="main-content">
+            <aside class="sidebar">
+                <div class="profile-card">
+                    <div class="profile-info">
+                        <img src="./images/75d8c49d07b0419387afd93ea4661dba_square.jpg" alt="Profile Photo" class="avatar">
+                        <h2 class="profile-name">Oleg Derevianko</h2>
+                        <p class="profile-username">Front-end Developer</p>
+                        <p class="profile-bio">Front-end Developer from Ukraine, Kyiv. Passionate about creating beautiful and functional web applications.</p>
+                    </div>
+                    
+                    
+                    
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Ukraine, Kyiv</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>oleg.derevianko.s@gmail.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+380632537461</span>
+                        </div>
+                        <div class="contact-item"target="_blank">
+                            <i class="fab fa-linkedin"></i>
+                            <span >in/oleg-derevianko-s</span>
+                        </div>
+                        <div class="contact-item"target="_blank">
+                            <i class="fab fa-instagram"></i>
+                            <span>oleg.derevianko.s</span>
+                        </div>
+                    </div>
+                    
+                    <a href="/resume.pdf" download class="btn btn-primary">
+                        <i class="fas fa-download"></i>
+                        <span>Download CV</span>
+                    </a>
+                    <a href="mailto:oleg.derevianko.s@gmail.com" class="btn btn-secondary">
+                        <i class="fas fa-envelope"></i>
+                        <span>Contact Me</span>
+                    </a>
+                    <span class="line"></span>
+                    <div class="skills-section">
+                        <h3 class="skills-title">Skills</h3>
+                        <div class="skills-list">
+                            <i class="fa-brands fa-html5"></i>
+                            <i class="fa-brands fa-css3-alt"></i>
+                            <i class="fa-brands fa-square-js"></i>
+                            <i class="fa-brands fa-node"></i>
+                            <i class="fa-brands fa-sass"></i>
+                            <i class="fa-brands fa-react"></i>
+                            <i class="fa-brands fa-square-github"></i>
+                            <i class="fa-brands fa-figma"></i>
+                            <i class="fa-brands fa-bootstrap"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                
+            </aside>
+            
+            <main class="content">
+                <nav class="nav">
+                    <a href="#" class="nav-link active">Repositories</a>
+                    <a href="#" class="nav-link">Projects</a>
+                    <a href="#" class="nav-link">Packages</a>
+                    <a href="#" class="nav-link">Stars</a>
+                </nav>
+                
+                <div class="repo-list">
+                    <div class="repo-card">
+                        <div class="box">
+                            <div class="repo-header">
+                                <a href="#" class="repo-name">Alien_NFT</a>
+                            </div>
+                            <p class="repo-description">A simple landing page of NFT on basic HTML and CSS.</p>
+                            <div class="repo-meta">
+                                <span class="repo-language">
+                                    <span class="language-color language-color-red"></span>
+                                    <span>HTML</span>
+                                    <span class="language-color language-color-purple"></span>
+                                    <span>CSS</span>
+                                </span>
+                            </div>
+                        </div>
+                        <img src="./images/alien.png" class="img" alt="">
+                        <span class="repo-visibility">Public</span>
+
+                    </div>
+                    
+                    <div class="repo-card">
+                        <div class="repo-header">
+                            <a href="#" class="repo-name">task-manager</a>
+                            <span class="repo-visibility">Public</span>
+                        </div>
+                        <p class="repo-description">A task management application with drag-and-drop functionality using JavaScript and SCSS.</p>
+                        <div class="repo-meta">
+                            <span class="repo-language">
+                                <span class="language-color"></span>
+                                <span>JavaScript</span>
+                            </span>
+                            <span>Updated 1 week ago</span>
+                        </div>
+                    </div>
+                    
+                    <div class="repo-card">
+                        <div class="repo-header">
+                            <a href="#" class="repo-name">portfolio</a>
+                            <span class="repo-visibility">Public</span>
+                        </div>
+                        <p class="repo-description">This portfolio website, showcasing my skills and projects.</p>
+                        <div class="repo-meta">
+                            <span class="repo-language">
+                                <span class="language-color"></span>
+                                <span>HTML</span>
+                            </span>
+                            <span>Updated 2 weeks ago</span>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+    
+    <script>
+        // Theme toggle functionality
+        const themeToggle = document.createElement('button');
+        themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+        themeToggle.style.position = 'fixed';
+        themeToggle.style.bottom = '20px';
+        themeToggle.style.right = '20px';
+        themeToggle.style.padding = '10px';
+        themeToggle.style.borderRadius = '50%';
+        themeToggle.style.backgroundColor = 'var(--github-card-bg)';
+        themeToggle.style.border = '1px solid var(--github-border)';
+        themeToggle.style.color = 'var(--github-text)';
+        themeToggle.style.cursor = 'pointer';
+        themeToggle.style.zIndex = '100';
+        
+        document.body.appendChild(themeToggle);
+        
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('light-mode');
+            
+            if (document.body.classList.contains('light-mode')) {
+                themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+                document.documentElement.style.setProperty('--github-header-bg', '#f6f8fa');
+                document.documentElement.style.setProperty('--github-bg', '#ffffff');
+                document.documentElement.style.setProperty('--github-border', '#d0d7de');
+                document.documentElement.style.setProperty('--github-text', '#24292f');
+                document.documentElement.style.setProperty('--github-text-secondary', '#57606a');
+                document.documentElement.style.setProperty('--github-accent', '#0969da');
+                document.documentElement.style.setProperty('--github-card-bg', '#f6f8fa');
+            } else {
+                themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+                document.documentElement.style.setProperty('--github-header-bg', '#24292f');
+                document.documentElement.style.setProperty('--github-bg', '#0d1117');
+                document.documentElement.style.setProperty('--github-border', '#30363d');
+                document.documentElement.style.setProperty('--github-text', '#c9d1d9');
+                document.documentElement.style.setProperty('--github-text-secondary', '#8b949e');
+                document.documentElement.style.setProperty('--github-accent', '#58a6ff');
+                document.documentElement.style.setProperty('--github-card-bg', '#161b22');
+            }
+        });
+        
+        // Clock functionality
+        function updateClock() {
+            const now = new Date();
+            const hours = now.getHours().toString().padStart(2, '0');
+            const minutes = now.getMinutes().toString().padStart(2, '0');
+            const seconds = now.getSeconds().toString().padStart(2, '0');
+            
+            const clockElement = document.createElement('div');
+            clockElement.id = 'clock';
+            clockElement.style.position = 'fixed';
+            clockElement.style.bottom = '20px';
+            clockElement.style.left = '20px';
+            clockElement.style.backgroundColor = 'var(--github-card-bg)';
+            clockElement.style.border = '1px solid var(--github-border)';
+            clockElement.style.padding = '8px 12px';
+            clockElement.style.borderRadius = '6px';
+            clockElement.style.fontFamily = 'monospace';
+            clockElement.textContent = `${hours}:${minutes}:${seconds}`;
+            
+            const existingClock = document.getElementById('clock');
+            if (existingClock) {
+                existingClock.textContent = `${hours}:${minutes}:${seconds}`;
+            } else {
+                document.body.appendChild(clockElement);
+            }
+        }
+        
+        setInterval(updateClock, 1000);
+        updateClock();
+    </script>
+</body>
+</html>

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frontend Developer Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+        <!-- Header -->
+        <header class="flex justify-center items-center mb-10 pad50">        
+
+
+            <div class="header-first-box">
+                <div class="social-links">
+                    <a href="https://github.com/OlegDerevianko" class="social__link" target="_blank">
+                        <i class="fab fa-github"></i>
+                        <span class="tooltip">GitHub</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/oleg-derevianko-s/" class="social__link"target="_blank">
+                        <i class="fab fa-linkedin"></i>
+                        <span class="tooltip">LinkedIn</span>
+                    </a>
+                    <a href="viber://chat?number=%2B380632537461" class="social__link"target="_blank">
+                        <i class="fab fa-viber"></i>
+                        <span class="tooltip">Viber</span>
+                    </a>
+                    <a href="tg://resolve?domain=@Azzruell" class="social__link"target="_blank">
+                        <i class="fab fa-telegram"></i>
+                        <span class="tooltip">Telegram</span>
+                    </a>                    
+                    <a href="https://www.instagram.com/oleg.derevianko.s/" class="social__link"target="_blank">
+                        <i class="fab fa-instagram"></i>
+                        <span class="tooltip">Instagram</span>
+                    </a>
+                    <a href="whatsapp://send?phone=+380632537461" class="social__link"target="_blank">
+                        <i class="fab fa-whatsapp"></i>
+                        <span class="tooltip">Whatsapp</span>
+                    </a>                
+                </div>
+            </div>
+            <div class="header-second-box">
+                <div class="header-second-box-inner">
+                    <div class="header-button-box">
+                        <a href="/resume.pdf" download class="inline-block px-6 py-3 bg-github-green text-github-white rounded-lg mr-4 hover:bg-github-green-dark btn-header">Download CV<i class="fa-solid fa-download"></i></a>
+                        <a href="mailto:john.doe@example.com" class="inline-block px-6 py-3 bg-github-blue text-github-white rounded-lg  btn-header">Contact Me</a>
+                    </div>
+                    <div class="social-contact">
+                        <a href="mailto:oleg.derevianko.s@gmail.com" class="social__link">
+                            <i class="fas fa-envelope"></i>
+                            <span class="tooltip">oleg.derevianko.s@gmail.com</span>
+                        </a>
+                        <a href="tel:+380632537461" class="social__link">
+                            <i class="fas fa-phone"></i>
+                            <span class="tooltip">+380632537461</span>
+                        </a>
+                        <div class="clock">
+                            <i class="fa-regular fa-clock"></i>
+                            <span id="hours"></span>:<span id="minutes"></span>:<span id="seconds"></span>
+                        </div>
+                    </div>
+                    <div class="location">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>Ukraine. Kiev</span>
+                    </div>
+                </div>
+                
+            </div>
+
+            
+        </header>
+        <section class="skills justify-center flex">
+            <div class="fa-brands-box">
+                <i class="fa-brands fa-html5"></i>
+                <i class="fa-brands fa-css3-alt"></i>
+                <i class="fa-brands fa-square-js"></i>
+                <i class="fa-brands fa-node"></i>
+                <i class="fa-brands fa-sass"></i>
+                <i class="fa-brands fa-react"></i>
+                <i class="fa-brands fa-square-github"></i>
+                <i class="fa-brands fa-figma"></i>
+                <i class="fa-brands fa-bootstrap"></i>
+            </div>           
+        </section>
+        <!-- Contacts and Socials -->
+        <section class="mb-10">
+            <div class="flex items-center">
+                <img src="./images/75d8c49d07b0419387afd93ea4661dba_square.jpg" alt="Developer Photo" class="w-24 h-24 rounded-full mr-4">
+                <div>
+                    <h1 class="text-3xl font-bold">John Doe</h1>
+                    <p class="text-xl text-github-neutral">Frontend Developer</p>
+                </div>
+            </div>
+            <h2 class="text-2xl font-semibold mb-4">Contact Information</h2>
+            <div class="flex flex-wrap gap-4">
+                <a href="tel:+1234567890" class="flex items-center text-github-blue hover:underline">
+                    <i class="fas fa-phone mr-2"></i> +1 (234) 567-890
+                </a>
+                <a href="mailto:john.doe@example.com" class="flex items-center text-github-blue hover:underline">
+                    <i class="fas fa-envelope mr-2"></i> john.doe@example.com
+                </a>
+                <a href="https://github.com/johndoe" target="_blank" class="flex items-center text-github-purple hover:underline">
+                    <i class="fab fa-github mr-2"></i> GitHub
+                </a>
+                <a href="https://linkedin.com/in/johndoe" target="_blank" class="flex items-center text-github-blue hover:underline">
+                    <i class="fab fa-linkedin mr-2"></i> LinkedIn
+                </a>
+                <a href="https://twitter.com/johndoe" target="_blank" class="flex items-center text-github-blue hover:underline">
+                    <i class="fab fa-twitter mr-2"></i> Twitter
+                </a>
+            </div>
+        </section>
+
+        <!-- Action Buttons -->
+        <section class="mb-10">
+            
+        </section>
+
+        <!-- Skills -->
+        
+
+        <!-- Projects -->
+        <section>
+            <h2 class="text-2xl font-semibold mb-4">Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="project-card bg-github-white dark:bg-github-neutral p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold">E-Commerce Website</h3>
+                    <p class="text-github-neutral mb-4">A fully responsive e-commerce platform built with React and Tailwind CSS.</p>
+                    <a href="https://github.com/johndoe/ecommerce" target="_blank" class="text-github-blue hover:underline">View on GitHub</a>
+                </div>
+                <div class="project-card bg-github-white dark:bg-github-neutral p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold">Task Manager App</h3>
+                    <p class="text-github-neutral mb-4">A task management application with drag-and-drop functionality using JavaScript and SCSS.</p>
+                    <a href="https://github.com/johndoe/task-manager" target="_blank" class="text-github-blue hover:underline">View on GitHub</a>
+                </div>
+                <div class="project-card bg-github-white dark:bg-github-neutral p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold">Portfolio Website</h3>
+                    <p class="text-github-neutral mb-4">This portfolio website, showcasing my skills and projects.</p>
+                    <a href="https://github.com/johndoe/portfolio" target="_blank" class="text-github-blue hover:underline">View on GitHub</a>
+                </div>
+            </div>
+            <button id="theme-toggle" class="p-2 rounded-full bg-github-neutral dark:bg-github-black">
+                <i class="fas fa-moon text-github-white"></i>
+            </button>
+        </section>
+        <script>
+            function updateFancyClock() {
+              const now = new Date();
+              
+              document.getElementById('hours').textContent = 
+                now.getHours().toString().padStart(2, '0');
+              document.getElementById('minutes').textContent = 
+                now.getMinutes().toString().padStart(2, '0');
+              document.getElementById('seconds').textContent = 
+                now.getSeconds().toString().padStart(2, '0');
+            }
+            
+            updateFancyClock();
+            setInterval(updateFancyClock, 1000);
+            </script>
+    <script>
+        const themeToggle = document.getElementById('theme-toggle');
+        const body = document.body;
+
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark');
+            const isDark = body.classList.contains('dark');
+            themeToggle.innerHTML = isDark ? '<i class="fas fa-sun text-github-white"></i>' : '<i class="fas fa-moon text-github-white"></i>';
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        });
+
+        // Load theme from localStorage
+        if (localStorage.getItem('theme') === 'dark') {
+            body.classList.add('dark');
+            themeToggle.innerHTML = '<i class="fas fa-sun text-github-white"></i>';
+        }
+    </script>
+</body>
+</html>
