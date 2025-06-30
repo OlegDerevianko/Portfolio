@@ -13,6 +13,7 @@
             --github-border: #30363d;
             --github-text: #c9d1d9;
             --github-text-secondary: #8b949e;
+            --github-text-hover: #478be6;
             --github-accent: #58a6ff;
             --github-green: #238636;
             --github-green-hover: #2ea043;
@@ -116,6 +117,7 @@
     visibility: visible;
     transform: translateX(-50%) translateY(100%);
 }
+
         
         .main-content {
             display: flex;
@@ -186,7 +188,16 @@
             gap: 8px;
             margin-bottom: 8px;
         }
-        
+        .contact-item a {
+            color: var(--github-text);
+            text-decoration: none;
+            font-size: 14px;
+            transition: all 0.2s ease-in-out;
+        }
+        .contact-item a:hover {
+            color: var(--github-text-hover);
+            text-decoration: underline;
+        }
         .btn {
             box-sizing: border-box;
             display: inline-flex;
@@ -348,9 +359,10 @@
             flex-wrap: wrap;
             gap: 8px;
         }
+        
         .fa-brands {
             position: relative;
-            font-size: 30px;
+            font-size: 22px;
             color: #9198a1;
         }
         .fa-html5:hover::after{
@@ -380,12 +392,13 @@
             border-radius: 12px;
             font-size: 12px;
         }
-        .img {
-            
-            height: 200px;
+        .img {        
+            box-sizing: border-box;
+            height: 120px;
             border-radius: 12px;
             border: 1px solid var(--github-border);
         }
+        
         .prof {
             display: flex;
             align-items: center;
@@ -403,10 +416,13 @@
                 height: 50%;
             }
             .img {
-                height: 150px;
+                width: 150px;
             }
             .sidebar {
                 width: 100%;
+            }
+            .fa-brands {
+                font-size: 36px;
             }
             
             .header-content {
@@ -417,7 +433,8 @@
         }
         @media (max-width: 1024px) {            
             .img {
-                height: 150px;  
+                width: 150px;
+
             }
         }
     </style>
@@ -464,7 +481,7 @@
             <aside class="sidebar">
                 <div class="profile-card">
                     <div class="profile-info">
-                        <img src="./images/75d8c49d07b0419387afd93ea4661dba_square.jpg" alt="Profile Photo" class="avatar">
+                        <img src="./images/photo_2025-06-30_19-16-20.png" alt="Profile Photo" class="avatar">
                         <h2 class="profile-name">Oleg Derevianko</h2>
                         <p class="profile-username">Front-end Developer</p>
                         <p class="profile-bio">Front-end Developer from Ukraine, Kyiv. Passionate about creating beautiful and functional web applications.</p>
@@ -475,23 +492,23 @@
                     <div class="contact-info">
                         <div class="contact-item">
                             <i class="fas fa-map-marker-alt"></i>
-                            <span>Ukraine, Kyiv</span>
+                            <a href="">Ukraine, Kyiv</a>
                         </div>
                         <div class="contact-item">
                             <i class="fas fa-envelope"></i>
-                            <span>oleg.derevianko.s@gmail.com</span>
+                            <a href="">oleg.derevianko.s@gmail.com</a>
                         </div>
                         <div class="contact-item">
                             <i class="fas fa-phone"></i>
-                            <span>+380632537461</span>
+                            <a href="">+380632537461</a>
                         </div>
                         <div class="contact-item"target="_blank">
                             <i class="fab fa-linkedin"></i>
-                            <span >in/oleg-derevianko-s</span>
+                            <a href="" >in/oleg-derevianko-s</a>
                         </div>
                         <div class="contact-item"target="_blank">
                             <i class="fab fa-instagram"></i>
-                            <span>oleg.derevianko.s</span>
+                            <a href="">oleg.derevianko.s</a>
                         </div>
                     </div>
                     
@@ -505,7 +522,7 @@
                     </a>
                     <span class="line"></span>
                     <div class="skills-section">
-                        <h3 class="skills-title">Skills</h3>
+                        <h3 class="skills-title">Achievements</h3>
                         <div class="skills-list">
                             <i class="fa-brands fa-html5"></i>
                             <i class="fa-brands fa-css3-alt"></i>
@@ -535,7 +552,7 @@
                     <div class="repo-card">
                         <div class="box">
                             <div class="repo-header">
-                                <a href="#" class="repo-name">Alien_NFT</a>
+                                <a href="https://olegderevianko.github.io/Alien_NFT/" class="repo-name" target="_blank">Alien_NFT</a>
                             </div>
                             <p class="repo-description">A simple landing page of NFT on basic HTML and CSS.</p>
                             <div class="repo-meta">
