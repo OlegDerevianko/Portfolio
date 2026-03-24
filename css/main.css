@@ -100,13 +100,16 @@ button {
 
 /* ---------- HEADER ---------- */
 
+.header-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
+    padding: 0 16px;
+}
 .theme-container {
     display: flex;
     justify-content: center;
-    padding: 0 16px;
-    left: 0;
-    top: 20px;
-    width: 100%;
 }
 .toggle-container {
     position: relative;
@@ -146,6 +149,82 @@ button {
     background: var(--theme-bg-hover-color);
     transition: all 0.3s;
 }
+.header-links {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.contact-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}    
+.contact-item {
+    position: relative;
+}    
+.contact-link {
+    color: var(--icons-secondary-color);
+    font-size: 1.5rem;
+    transition: all 0.3s;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}    
+.contact-link:hover {
+    color: var(--icons-primary-color);
+    transform: translateY(-3px);
+}    
+.contact-tooltip {
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--tooltip-bg);
+    color: var(--tooltip-text);
+    padding: 5px 10px;
+    border-radius: 8px;
+    font-size: 0.75rem;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.2s ease;
+    pointer-events: none;
+    font-weight: 400;
+    box-shadow: var(--shadow-sm);
+    z-index: 10;
+}
+.contact-link:hover .contact-tooltip {
+    opacity: 1;
+    visibility: visible;
+    bottom: -30px;
+}
+.social-link:hover .contact-tooltip {
+    opacity: 1;
+    visibility: visible;
+    bottom: -20px;
+}
+
+.social-links {
+    display: flex;
+    right: 30px;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+.social-link {
+    color: var(--icons-secondary-color);
+    font-size: 1.5rem;
+    transition: color 0.2s, transform 0.2s;
+}
+.social-link:hover {
+    color: var(--icons-primary-color);
+    transform: translateY(-3px);
+}
+
+.social-link:hover .fab {
+    text-shadow: 0 0 30px var(--color);
+}
 
 /* ----------- MAIN ---------- */
 
@@ -156,6 +235,9 @@ button {
 }
 .profile-container {
     padding: 0 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .profile-developer {
     display: flex;
@@ -249,184 +331,66 @@ button {
 
 
 
-.contact-links {
-    position: absolute;
-    left: 30px;
-    top: 40%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 30px;
-}    
-.contact-item {
-    position: relative;
-}    
-.contact-link {
-    text-decoration: none;
-    color: var(--icons-secondary-color);
-    font-size: 1.5rem;
-    transition: all 0.3s;
-    display: flex;
-    flex-direction: column;
-    position: relative;
-}    
-.contact-link:hover {
-    color: var(--icons-primary-color);
-    transform: translateY(-3px);
-}    
-.contact-tooltip-mail {
-    position: absolute;
-    top: -300%;
-    left: 525%;
-    transform: translateX(-100%);     
-    background-color: var(--primary-color);
-    color: var(--tooltip-color);
-    padding: 5px 10px;
-    border-radius: 5px;
-    font-size: 0.9rem;
-    white-space: nowrap;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s;
-    margin-bottom: 10px;
-    pointer-events: none;
-    
-}    
-.contact-link:hover .contact-tooltip-mail {
-    opacity: 1;
-    visibility: visible;
-    transform: translateX(-96%) translateY(35px);
-    @media screen and (min-width: 768px) {
-        transform: translateY(-100%) translateX(-30px);        
-    }
-}
-.contact-tooltip-phone {
-    position: absolute;
-    top: -300%;
-    left: 425%;  
-    transform: translatex(-100%);     
-    background-color: var(--primary-color);
-    color: var(--tooltip-color);
-    padding: 5px 10px;
-    border-radius: 5px;
-    font-size: 0.9rem;
-    white-space: nowrap;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s;
-    margin-bottom: 10px;
-    pointer-events: none;
-    
-}    
-.contact-link:hover .contact-tooltip-phone {
-    opacity: 1;
-    visibility: visible;
-    transform: translateX(-109%) translateY(35px);
-    
-}
 
-.social-links {
-    position: absolute;
+
+
+
+.tech-stack {
     display: flex;
-    right: 30px;
-    flex-direction: column;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     gap: 20px;
+    background-color: var(--btn-primary-color);
+    border-radius: 16px;
+    padding: 20px 20px;
+    box-shadow: var(--shadow-md);
+    width: fit-content;
 }
-.social-link {
-    color: var(--icons-secondary-color);
+.tech-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s ease;
+    cursor: default;
+}
+.tech-item i {
     font-size: 2rem;
-    transition: color 0.2s, transform 0.2s;
+    color: var(--icon-secondary);
+    transition: all 0.2s ease;
 }
-.social-link:hover {
-    color: var(--icons-primary-color);
+.tech-item:hover i {
+    color: var(--icon-hover);
     transform: translateY(-3px);
 }
-
-.social-link:hover .fab {
-    text-shadow: 0 0 30px var(--color);
+.tech-name {
+    font-size: 12px;
+    color: var(--text-muted);
+    font-weight: 500;
 }
+
 
 
 .tab-section {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 40px;
-    box-sizing: border-box;
-
+    padding: 50px 0;
 }
 
-.tab-buttons {
-    box-sizing: border-box;
+
+
+
+
+
+.tab-container {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    /* flex-direction: column; */
-    justify-content: center;
-    margin-bottom: 30px;
-    gap: 10px;
-    background-color: var(--btn-primary-color);
-    border-radius: 10px;
-    padding: 15px 24px;
-    box-shadow: var(--shadow);
-    
-}
-.fa-brands-box {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 15px;
-    padding: 24px;
-    background-color: var(--bg-third-color);
-    border-radius: 10px;
-    box-shadow: var(--shadow);
-}
-.fa-brands {
-    font-size: 2.5rem;
-    color: var(--light);
-    transition: all 0.3s;
-}
-.tab-btn {
-    box-sizing: border-box;
-    width: 100%;
-    font-family: "Poppins", sans-serif;
-    background-color: transparent;
-    border: none;
-    padding: 20px 40px;
-    border-radius: 10px;
-    font-size: 18px;
-    font-weight: 600;
-    cursor: pointer;
-    color: var(--text-color);
-    transition: all 0.3s;
-      
-}
-.tab-btn:hover {
-    background-color: var(--btn-third-color);
-
-}
-
-.tab-btn.active {
-    background-color: var(--btn-third-color);
-    color: var(--primary-color);
-}
-
-.tab-btn:hover:not(.active) {
-    color: var(--primary-color);
-}
-
-.tab-content {
-    display: none;
+    padding: 0 16px;
     animation: fadeIn 0.5s ease-in-out;
 }
 
-.tab-content.active {
-    display: block;
-}
+
 
 .portfolio-grid {
     display: grid;
@@ -561,6 +525,8 @@ button {
     max-width: 1440px;
     margin: 0 auto;
     padding: 30px 0;
+    border-top: 1px solid #A3ABB2;
+
 }
 .footer__container {
     padding: 0 16px;
@@ -707,6 +673,10 @@ textarea.form-control {
     to { opacity: 1; }
 }
 @media (min-width: 450px) {
+    .header-links {
+        flex-direction: row;
+        justify-content: space-around;
+    }
     .action-buttons {
         flex-direction: row;
     }
@@ -716,13 +686,34 @@ textarea.form-control {
 }
 
 @media (min-width: 768px)  {
+    .header-container {
+        padding: 0 40px;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .theme-container {
+        padding: 0 40px;
+    }
+    .header-links {
+        gap: 50px;
+    }
+    .contact-links {
+        gap: 20px;
+    }
     .profile-container {
         padding: 0 40px;
+        flex-direction: row-reverse;
+        gap: 40px;
+        justify-content: space-between;
     }
     .profile-developer {
     }
     .profile-title {
         flex-direction: row;
+        justify-content: start;
+    }
+    .tech-stack {
+        flex-direction: column;
     }
     .footer__container {
         padding: 0 40px;

@@ -19,40 +19,63 @@
 </head>
 <body>
 <header class="header">
-    <div class="theme-container">
-        <div class="toggle-container">
-            <button class="theme-toggle" id="themeToggle">
-                <i class="fas fa-moon"></i>
-            </button>
+    <div class="header-container">
+        <div class="theme-container">
+            <div class="toggle-container">
+                <button class="theme-toggle" id="themeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div> 
         </div> 
-    </div>  
-</header>
-
-<main class="main">   
-    <section class="profile">
-        <div class="profile-container">
-            <!-- <div class="social-links">
-                <a href="https://github.com/OlegDerevianko" class="social-link" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/oleg-derevianko-s/" class="social-link"target="_blank"><i class="fab fa-linkedin"></i></a>
-                <a href="viber://chat?number=%2B380632537461" class="social-link"target="_blank"><i class="fab fa-viber"></i></a>
-                <a href="tg://resolve?domain=@Azzruell" class="social-link"target="_blank"><i class="fab fa-telegram"></i></a>
-                <a href="https://www.instagram.com/oleg.derevianko.s/" class="social-link"target="_blank"><i class="fab fa-instagram"></i></a>
-                <a href="whatsapp://send?phone=+380632537461" class="social-link"target="_blank"><i class="fab fa-whatsapp"></i></a>
+        <div class="header-links">
+            <div class="social-links">
+                <a href="https://github.com/OlegDerevianko" class="social-link" target="_blank">
+                    <i class="fab fa-github"></i>
+                    <span class="contact-tooltip">GitHub</span>
+                </a>
+                <a href="https://www.linkedin.com/in/oleg-derevianko-s/" class="social-link"target="_blank">
+                    <i class="fab fa-linkedin"></i>
+                    <span class="contact-tooltip">LinkedIn</span>
+                </a>
+                <a href="viber://chat?number=%2B380632537461" class="social-link"target="_blank">
+                    <i class="fab fa-viber"></i>
+                    <span class="contact-tooltip">Viber</span>
+                </a>
+                <a href="tg://resolve?domain=@Azzruell" class="social-link"target="_blank">
+                    <i class="fab fa-telegram"></i>
+                    <span class="contact-tooltip">Telegram</span>
+                </a>
+                <a href="https://www.instagram.com/oleg.derevianko.s/" class="social-link"target="_blank">
+                    <i class="fab fa-instagram"></i>
+                    <span class="contact-tooltip">Intagram</span>
+                </a>
+                <a href="whatsapp://send?phone=+380632537461" class="social-link"target="_blank">
+                    <i class="fab fa-whatsapp"></i>
+                    <span class="contact-tooltip">Whatsapp</span>
+                </a>
             </div>
             <div class="contact-links">
                 <div class="contact-item">
                     <a href="mailto:oleg.derevianko.s@gmail.com" class="contact-link">
                         <i class="fas fa-envelope"></i>
-                        <span class="contact-tooltip-mail">oleg.derevianko.s@gmail.com</span>
+                        <span class="contact-tooltip">oleg.derevianko.s@gmail.com</span>
                     </a>
                 </div>
                 <div class="contact-item">
                     <a href="tel:+380632537461" class="contact-link">
                         <i class="fas fa-phone"></i>
-                        <span class="contact-tooltip-phone">+380632537461</span>
+                        <span class="contact-tooltip">+380632537461</span>
                     </a>
                 </div>
-            </div> -->
+            </div>
+        </div>
+    </div> 
+</header>
+
+<main class="main">   
+    <section class="profile">
+        <div class="profile-container">
+            
             <div class="profile-developer">
                 <div class="profile-title">
                     <img class="profile-image" src="./images/photo_2025-06-30_19-16-20.png" alt="Developer Photo" >
@@ -80,21 +103,15 @@
                         </div>
                     </div>
                 </div>
+                <div class="action-buttons">
+                    <button id="contactMeBtn" class="button button-primary">Contact me</button>
+                    <a href="./Oleg_Derevianko_CV.pdf" download="Oleg_Derevianko_CV.pdf">
+                        <button class="button button-secondary">Download CV<i class="fa-solid fa-download"></i></button>
+                    </a>
+                </div>
             </div>                
-            <div class="action-buttons">
-                <button id="contactMeBtn" class="button button-primary">Contact me</button>
-                <a href="./Oleg_Derevianko_CV.pdf" download="Oleg_Derevianko_CV.pdf">
-                    <button class="button button-secondary">Download CV<i class="fa-solid fa-download"></i></button>
-                </a>
-            </div>
             
-        </section>
-        
-        <section class="tab-section">
-            
-            <div class="tab-buttons">
-                
-                <i class="fa-brands fa-css3-alt"></i>
+            <div class="tech-stack">
                 <div class="tech-item" data-tech="HTML5">
                     <i class="fa-brands fa-html5"></i>
                     <span class="tech-name">HTML5</span>
@@ -103,18 +120,39 @@
                     <i class="fa-brands fa-css3-alt"></i>
                     <span class="tech-name">CSS3</span>
                 </div>
-                    <i class="fa-brands fa-html5"></i>
+                <div class="tech-item" data-tech="JavaScript">
                     <i class="fa-brands fa-square-js"></i>
-                    <i class="fa-brands fa-node"></i>
-                    <i class="fa-brands fa-sass"></i>
+                    <span class="tech-name">JavaScript</span>
+                </div>
+                <div class="tech-item" data-tech="React">
                     <i class="fa-brands fa-react"></i>
+                    <span class="tech-name">React</span>
+                </div>
+                <div class="tech-item" data-tech="SASS">
+                    <i class="fa-brands fa-sass"></i>
+                    <span class="tech-name">SASS</span>
+                </div>
+                <div class="tech-item" data-tech="GitHub">
                     <i class="fa-brands fa-square-github"></i>
+                    <span class="tech-name">GitHub</span>
+                </div>
+                <div class="tech-item" data-tech="Figma">
                     <i class="fa-brands fa-figma"></i>
+                    <span class="tech-name">Figma</span>
+                </div>
+                <div class="tech-item" data-tech="Bootstrap">
                     <i class="fa-brands fa-bootstrap"></i>
-                    <i class="fa-brands fa-gulp"></i>
+                    <span class="tech-name">Bootstrap</span>
+                </div>
+                <div class="tech-item" data-tech="Node.js">
+                    <i class="fa-brands fa-node"></i>
+                    <span class="tech-name">Node.js</span>
+                </div>
             </div>
-            
-            <div class="tab-content active" id="portfolio">
+        </section>
+        
+        <section class="tab-section">           
+            <div class="tab-container active" id="portfolio">
                 <div class="portfolio-grid">
                     <div class="portfolio-item">
                         <img src="./images/barbershop.png" alt="Проект 0" class="portfolio-image" loading="lazy">

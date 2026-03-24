@@ -24,7 +24,7 @@
         
         // Переключение табов
         const tabButtons = document.querySelectorAll('.tab-btn');
-        const tabContents = document.querySelectorAll('.tab-content');
+        const tabContents = document.querySelectorAll('.tab-container');
         
         tabButtons.forEach(button => {
             button.addEventListener('click', () => {
