@@ -3,27 +3,24 @@
     --bg-primary: #e5e5e5;
     --bg-secondary: #FFFFFF;
     --bg-card: #FFFFFF;
-    --bg-hover: #F0F0F0;
-    
+    --bg-hover: #F0F0F0;    
     /* Text */
     --text-primary: #575757;
     --text-secondary: #3D3D3D;
     --text-third: #A3ABB2;
     --text-overlay: #e0e0e0;
-
+    /* Icons */
     --icons-color: #575757;
     --icons-hover: #1c1c1c;
-
+    /* Tooltip */
     --tooltip-text: #575757;
-
     /* Buttons & Actions */
     --btn-primary-bg: #FFFFFF;
     --btn-primary-text: #3D3D3D;
     --btn-secondary-bg: #F0F0F0;
     --btn-secondary-text: #111111;
     --btn-accent-text: #FFFFFF;
-    --btn-hover-bg: #FBD144;
-    
+    --btn-hover-bg: #FBD144;    
     /* Borders & Effects */
     --border-color: #e0e0e0;
     --border-light: #A3ABB2;
@@ -35,29 +32,24 @@
     --bg-primary: #0F1724;
     --bg-secondary: #1E293B;
     --bg-card: #1E293B;
-    --bg-hover: #334155;
-    
+    --bg-hover: #334155;    
     /* Text */
     --text-primary: #94A3B8;
     --text-secondary: #F1F5F9;
     --text-third: #64748B;
-    --text-overlay: #E2E8F0;
-    
+    --text-overlay: #E2E8F0;    
     /* Icons */
     --icons-color: #94A3B8;
-    --icons-hover: #F1F5F9;
-    
+    --icons-hover: #F1F5F9;    
     /* Tooltip */
-    --tooltip-text: #CBD5E1;
-    
+    --tooltip-text: #CBD5E1;    
     /* Buttons & Actions */
     --btn-primary-bg: #1E293B;
     --btn-primary-text: #F1F5F9;
     --btn-secondary-bg: #334155;
     --btn-secondary-text: #F1F5F9;
     --btn-accent-text: #FFFFFF;
-    --btn-hover-bg: #3B82F6;  /* Синій акцент */
-    
+    --btn-hover-bg: #3B82F6;      
     /* Borders & Effects */
     --border-color: #334155;
     --border-light: #475569;
@@ -115,9 +107,6 @@ button {
 }
 
 
-
-/* ---------- HEADER ---------- */
-
 .header-container {
     display: flex;
     flex-direction: column;
@@ -125,6 +114,7 @@ button {
     gap: 30px;
     padding: 0 16px;
 }
+
 .theme-container {
     display: flex;
     justify-content: center;
@@ -166,6 +156,7 @@ button {
     background: var(--btn-hover-bg);
     transition: all 0.3s;
 }
+
 .header-links {
     display: flex;
     flex-direction: column;
@@ -213,9 +204,8 @@ button {
     visibility: visible;
     bottom: -20px;
 }
-/* ----------- MAIN ---------- */
 
-/* Profile section */
+
 .profile {
     padding: 50px 0;
     border-top: 1px solid var(--border-light);
@@ -227,14 +217,12 @@ button {
     padding: 0 16px;
     gap: 30px;
 }
-/* All info container */
 .profile-developer {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 30px;
 }
-/* Photo Name container */
 .profile-title {
     display: flex;
     flex-direction: column;
@@ -254,7 +242,6 @@ button {
     color: var(--text-secondary);    
 }
 
-/* About container */
 .about-content {
     max-width: 600px;
     display: flex;
@@ -277,7 +264,6 @@ button {
     gap: 10px;
 }
 
-/* Buttons container */
 .action-buttons {
     display: flex;
     flex-direction: column;
@@ -306,7 +292,6 @@ button {
     margin-left: 10px;
 }
 
-/* Tech container */
 .tech-stack {
     display: flex;
     flex-wrap: wrap;
@@ -341,7 +326,6 @@ button {
 }
 
 
-/* Jobs section */
 .portfolio-section {
     display: flex;
     flex-direction: column;
@@ -429,7 +413,7 @@ button {
     transform: scale(1.1);
 }
 
-/*--------- Footer --------- */
+
 .footer {    
     padding: 30px 0;
     border-top: 1px solid var(--border-light);
@@ -446,7 +430,6 @@ button {
 }
 
 
-/* Модальне вікно відправки форми */
 .modal-overlay {
     display: flex;
     justify-content: center;
@@ -497,7 +480,7 @@ button {
     padding: 30px;
 }
 
-/* Form styles */
+
 .form-title {
     color: var(--text-primary);
     border-bottom: 1px solid var(--border-light);
@@ -545,7 +528,6 @@ textarea.form-control {
     background-color: var(--btn-hover-bg);
 }
 
-/* Name fields in one row */
 .name-fields {
     display: flex;
     gap: 15px;
@@ -554,7 +536,8 @@ textarea.form-control {
     flex: 1;
 }
 
-/* Кастомне сповіщення */
+
+
 .custom-notification {
     position: fixed;
     top: 20px;
@@ -606,11 +589,6 @@ textarea.form-control {
     animation: slideOutRight 0.3s ease forwards;
 }
 
-
-
-/* ============================================
-    BUTTON LOADING STATE
-   ============================================ */
 
 .submit-btn.loading {
     position: relative;
