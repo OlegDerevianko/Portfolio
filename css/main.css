@@ -145,7 +145,6 @@ button {
     border-radius: 50%;
     width: 40px;
     height: 40px;
-    z-index: 1000;
     background: var(--bg-secondary);
     color: var(--text-secondary);
     font-size: 20px;
