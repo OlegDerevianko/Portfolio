@@ -187,14 +187,14 @@ body.dark-mode .toggle-slider i {
     border: 3px solid var(--border-color);
     box-shadow: var(--shadow);   
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    animation: fadeInLeft 1s ease;
+    animation: blink 1s ease;
 }
 
 .profile-title h1 {
     font-size: 32px;
     color: var(--text-secondary); 
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    animation: fadeInRight 1s ease;   
+    animation: blink 1s ease;   
 }
 
 .about-content {
