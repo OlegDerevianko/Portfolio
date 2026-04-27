@@ -20,11 +20,20 @@
     <header class="header">
         <div class="header-container">
             <div class="theme-container">
-                <div class="toggle-container">
-                    <button class="theme-toggle" id="themeToggle">
-                        <i class="fas fa-moon"></i>
-                    </button>
-                </div>
+                                <!-- Кнопка переключения темы -->
+                <button class="theme-toggle" id="themeToggle">
+                    <div class="toggle-container">
+                        <div class="toggle-slider">
+                            <i class="fas fa-sun"></i>
+                        </div>
+                    </div>
+                </button>
+
+                <!-- Кнопка управления фоном -->
+                <button id="toggleBgEffect" class="bg-toggle-btn" title="Toggle floating symbols animation">
+                    <i class="fas fa-star-of-life"></i>
+                    <span class="toggle-status">ON</span>
+                </button>
             </div> 
             <div class="header-links">
                 <div class="social-links">
@@ -150,122 +159,401 @@
         <section class="portfolio-section">           
             <div class="portfolio-container">
                 <div class="portfolio-grid">
-                    <div class="portfolio-item">
+                    <!-- Barber Shop -->
+                    <div class="portfolio-item portfolio-item-slideup">
                         <img src="./images/portfolio/barbershop.png" alt="Barber Shop" class="portfolio-image" loading="lazy">
-                        <div class="portfolio-overlay">
+                        <div class="portfolio-title-bar">
                             <h3>Barber Shop</h3>
-                            <p>[HTML, CSS, JS]</p>
-                            <p>A modern, responsive website for a barbershop. <br> Role: Developer</p>
-                            <a href="https://olegderevianko.github.io/BarberShop/" class="portfolio-link-btn" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+                            <div class="title-bar-icon">
+                                <i class="fas fa-chevron-up"></i>
+                            </div>
+                        </div>
+                        <div class="portfolio-slideup-panel">
+                            <h3>Barber Shop</h3>
+                            <div class="tech-tags">
+                                <span class="tag">HTML5</span>
+                                <span class="tag">CSS3</span>
+                                <span class="tag">JavaScript</span>
+                                <span class="tag">Responsive</span>
+                            </div>
+                            <p class="portfolio-full-desc">
+                                Modern barbershop website with service booking form, price list, gallery, and Google Maps integration. Fully responsive design with mobile-first approach.
+                            </p>
+                            <div class="portfolio-panel-buttons">
+                                <a href="https://olegderevianko.github.io/BarberShop/" class="portfolio-link-btn" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    <span>Live Demo</span>
+                                </a>
+                                <a href="https://github.com/OlegDerevianko/BarberShop" class="portfolio-link-btn" target="_blank">
+                                    <i class="fa-brands fa-github"></i>
+                                    <span>GitHub</span>
+                                </a>
+                            </div>
                         </div>
                     </div>
-                    <div class="portfolio-item">
+
+                    <!-- Toy Store -->
+                    <div class="portfolio-item portfolio-item-slideup">
                         <img src="./images/portfolio/toystore.png" alt="Toy Store" class="portfolio-image" loading="lazy">
-                        <div class="portfolio-overlay">
+                        <div class="portfolio-title-bar">
                             <h3>Toy Store</h3>
-                            <p>[HTML, CSS]</p>
-                            <p>A modern, colorful, and fully responsive ecommerce website template for a toy store.  <br>Team project. Role: Developer</p>
-                            <a href="https://olegderevianko.github.io/ToyStore/" class="portfolio-link-btn" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+                            <div class="title-bar-icon">
+                                <i class="fas fa-chevron-up"></i>
+                            </div>
+                        </div>
+                        <div class="portfolio-slideup-panel">
+                            <h3>Toy Store</h3>
+                            <div class="tech-tags">
+                                <span class="tag">HTML5</span>
+                                <span class="tag">CSS3</span>
+                                <span class="tag">Flexbox/Grid</span>
+                                <span class="tag">E-commerce</span>
+                            </div>
+                            <p class="portfolio-full-desc">
+                                Colorful and fully responsive e-commerce website template featuring product cards, category filters, shopping cart UI, and newsletter subscription.
+                            </p>
+                            <div class="portfolio-panel-buttons">
+                                <a href="https://olegderevianko.github.io/ToyStore/" class="portfolio-link-btn" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    <span>Live Demo</span>
+                                </a>
+                                <a href="https://github.com/OlegDerevianko/ToyStore" class="portfolio-link-btn" target="_blank">
+                                    <i class="fa-brands fa-github"></i>
+                                    <span>GitHub</span>
+                                </a>
+                            </div>
                         </div>
                     </div>
-                    <div class="portfolio-item">
+
+                    <!-- Movie Search -->
+                    <div class="portfolio-item portfolio-item-slideup">
                         <img src="./images/portfolio/moviesearch.png" alt="Movie Search" class="portfolio-image" loading="lazy">
-                        <div class="portfolio-overlay">
+                        <div class="portfolio-title-bar">
                             <h3>Movie Search</h3>
-                            <p>[React, React Router, Framer Motion, Axios, TMDB API]</p>
-                            <p>A full-featured movie search app with advanced filtering, favorites, and trailer playback. <br> Role: Developer</p>
-                            <a href="https://movie-search-app-two-pink.vercel.app/" class="portfolio-link-btn" target="_blank">
-                                <i class="fas fa-external-link-alt"></i>
-                            </a>
+                            <div class="title-bar-icon">
+                                <i class="fas fa-chevron-up"></i>
+                            </div>
+                        </div>
+                        <div class="portfolio-slideup-panel">
+                            <h3>Movie Search</h3>
+                            <div class="tech-tags">
+                                <span class="tag">React 18</span>
+                                <span class="tag">React Router</span>
+                                <span class="tag">Framer Motion</span>
+                                <span class="tag">Axios</span>
+                                <span class="tag">TMDB API</span>
+                            </div>
+                            <p class="portfolio-full-desc">
+                                Full-featured movie database app with advanced search filters, favorites (localStorage), trailer playback modal, infinite scroll, and smooth page transitions.
+                            </p>
+                            <div class="portfolio-panel-buttons">
+                                <a href="https://movie-search-app-two-pink.vercel.app/" class="portfolio-link-btn" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    <span>Live Demo</span>
+                                </a>
+                                <a href="https://github.com/OlegDerevianko/movie-search-app" class="portfolio-link-btn" target="_blank">
+                                    <i class="fa-brands fa-github"></i>
+                                    <span>GitHub</span>
+                                </a>
+                            </div>
                         </div>
                     </div>
-                    <div class="portfolio-item">
+
+                    <!-- IceCream -->
+                    <div class="portfolio-item portfolio-item-slideup">
                         <img src="./images/portfolio/icecream.png" alt="IceCream" class="portfolio-image" loading="lazy">
-                        <div class="portfolio-overlay">
+                        <div class="portfolio-title-bar">
                             <h3>IceCream</h3>
-                            <p>[HTML, SASS, Parcel, JS]</p>
-                            <p>Ice company website with responsive layout,
-                                burger menu, modal window and attractive
-                                design. <br>Team project. Role: Developer</p>
-                            <a href="https://olegderevianko.github.io/IceCream_team_project/" class="portfolio-link-btn" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+                            <div class="title-bar-icon">
+                                <i class="fas fa-chevron-up"></i>
+                            </div>
                         </div>
-                    </div>                   
-                    <div class="portfolio-item">
+                        <div class="portfolio-slideup-panel">
+                            <h3>IceCream</h3>
+                            <div class="tech-tags">
+                                <span class="tag">HTML5</span>
+                                <span class="tag">SASS</span>
+                                <span class="tag">Parcel</span>
+                                <span class="tag">JavaScript</span>
+                            </div>
+                            <p class="portfolio-full-desc">
+                                Modern ice cream brand website with animated burger menu, product showcase, modal windows for orders, and mobile-adaptive pixel-perfect layout.
+                            </p>
+                            <div class="portfolio-panel-buttons">
+                                <a href="https://olegderevianko.github.io/IceCream_team_project/" class="portfolio-link-btn" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    <span>Live Demo</span>
+                                </a>
+                                <a href="https://github.com/OlegDerevianko/Ice_Cream" class="portfolio-link-btn" target="_blank">
+                                    <i class="fa-brands fa-github"></i>
+                                    <span>GitHub</span>
+                                </a>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Your Meal (Burger) -->
+                    <div class="portfolio-item portfolio-item-slideup">
                         <img src="./images/portfolio/burger.png" alt="Your Meal" class="portfolio-image" loading="lazy">
-                        <div class="portfolio-overlay">
+                        <div class="portfolio-title-bar">
                             <h3>Your Meal</h3>
-                            <p>[HTML, SASS, JS]</p>
-                            <p>A website with a responsive layout, modals.
-                                <br>Role: Developer.</p>
-                            <a href="https://olegderevianko.github.io/Burger/" class="portfolio-link-btn" target="_blank"><i class="fas fa-external-link-alt"></i></a>
-                        </div>                            
-                    </div>                        
-                    <div class="portfolio-item">
+                            <div class="title-bar-icon">
+                                <i class="fas fa-chevron-up"></i>
+                            </div>
+                        </div>
+                        <div class="portfolio-slideup-panel">
+                            <h3>Your Meal</h3>
+                            <div class="tech-tags">
+                                <span class="tag">HTML5</span>
+                                <span class="tag">SASS</span>
+                                <span class="tag">JavaScript</span>
+                                <span class="tag">Modal Windows</span>
+                            </div>
+                            <p class="portfolio-full-desc">
+                                Restaurant food delivery website with interactive menu cards, smooth modal dialogs for order details, and fully responsive design for all devices.
+                            </p>
+                            <div class="portfolio-panel-buttons">
+                                <a href="https://olegderevianko.github.io/Burger/" class="portfolio-link-btn" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    <span>Live Demo</span>
+                                </a>
+                                <a href="https://github.com/OlegDerevianko/Burger" class="portfolio-link-btn" target="_blank">
+                                    <i class="fa-brands fa-github"></i>
+                                    <span>GitHub</span>
+                                </a>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Real Estate -->
+                    <div class="portfolio-item portfolio-item-slideup">
                         <img src="./images/portfolio/realestate.png" alt="Real Estate" class="portfolio-image" loading="lazy">
-                        <div class="portfolio-overlay">
+                        <div class="portfolio-title-bar">
                             <h3>Real Estate</h3>
-                            <p>[HTML, SASS, JS]</p>
-                            <p>A multipage website with a adaptive layout, burger
-                                menu, sliders. <br>Role: Developer.</p>
-                            <a href="https://olegderevianko.github.io/Real_Estate/" class="portfolio-link-btn" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+                            <div class="title-bar-icon">
+                                <i class="fas fa-chevron-up"></i>
+                            </div>
+                        </div>
+                        <div class="portfolio-slideup-panel">
+                            <h3>Real Estate</h3>
+                            <div class="tech-tags">
+                                <span class="tag">HTML5</span>
+                                <span class="tag">SASS</span>
+                                <span class="tag">JavaScript</span>
+                                <span class="tag">Swiper Slider</span>
+                            </div>
+                            <p class="portfolio-full-desc">
+                                Multi-page real estate agency website featuring property listings, photo sliders, burger menu navigation, contact forms, and fully adaptive layout.
+                            </p>
+                            <div class="portfolio-panel-buttons">
+                                <a href="https://olegderevianko.github.io/Real_Estate/" class="portfolio-link-btn" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    <span>Live Demo</span>
+                                </a>
+                                <a href="https://github.com/OlegDerevianko/Real_Estate" class="portfolio-link-btn" target="_blank">
+                                    <i class="fa-brands fa-github"></i>
+                                    <span>GitHub</span>
+                                </a>
+                            </div>
                         </div>
                     </div>
-                    <div class="portfolio-item">
+
+                    <!-- Beau Mountain -->
+                    <div class="portfolio-item portfolio-item-slideup">
                         <img src="./images/portfolio/mountain.png" alt="Beau Mountain" class="portfolio-image" loading="lazy">
-                        <div class="portfolio-overlay">
+                        <div class="portfolio-title-bar">
                             <h3>Beau Mountain</h3>
-                            <p>[HTML, CSS]</p>
-                            <p>Simple landing page. <br>Role: Developer. </p>
-                            <a href="https://olegderevianko.github.io/Beau_mountain_landing/" class="portfolio-link-btn" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+                            <div class="title-bar-icon">
+                                <i class="fas fa-chevron-up"></i>
+                            </div>
                         </div>
-                    </div>    
-                    <div class="portfolio-item">
+                        <div class="portfolio-slideup-panel">
+                            <h3>Beau Mountain</h3>
+                            <div class="tech-tags">
+                                <span class="tag">HTML5</span>
+                                <span class="tag">CSS3</span>
+                                <span class="tag">Landing Page</span>
+                            </div>
+                            <p class="portfolio-full-desc">
+                                Elegant one-page landing for a mountain resort with hero section, accommodation cards, amenities showcase, and call-to-action form.
+                            </p>
+                            <div class="portfolio-panel-buttons">
+                                <a href="https://olegderevianko.github.io/Beau_mountain_landing/" class="portfolio-link-btn" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    <span>Live Demo</span>
+                                </a>
+                                <a href="https://github.com/OlegDerevianko/Beau_mountain_landing" class="portfolio-link-btn" target="_blank">
+                                    <i class="fa-brands fa-github"></i>
+                                    <span>GitHub</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Edu Man -->
+                    <div class="portfolio-item portfolio-item-slideup">
                         <img src="./images/portfolio/eduman.png" alt="Edu Man" class="portfolio-image" loading="lazy">
-                        <div class="portfolio-overlay">
+                        <div class="portfolio-title-bar">
                             <h3>Edu Man</h3>
-                            <p>[HTML, SASS]</p>
-                            <p>Simple landing page. <br>Role: Developer. </p>
-                            <a href="https://olegderevianko.github.io/Edu_Man_landing/" class="portfolio-link-btn" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+                            <div class="title-bar-icon">
+                                <i class="fas fa-chevron-up"></i>
+                            </div>
                         </div>
-                    </div>    
-                    <div class="portfolio-item">
+                        <div class="portfolio-slideup-panel">
+                            <h3>Edu Man</h3>
+                            <div class="tech-tags">
+                                <span class="tag">HTML5</span>
+                                <span class="tag">SASS</span>
+                                <span class="tag">Responsive</span>
+                            </div>
+                            <p class="portfolio-full-desc">
+                                Modern educational platform landing page featuring course categories, instructor profiles, student testimonials, and enrollment call-to-action.
+                            </p>
+                            <div class="portfolio-panel-buttons">
+                                <a href="https://olegderevianko.github.io/Edu_Man_landing/" class="portfolio-link-btn" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    <span>Live Demo</span>
+                                </a>
+                                <a href="https://github.com/OlegDerevianko/Edu_Man_landing" class="portfolio-link-btn" target="_blank">
+                                    <i class="fa-brands fa-github"></i>
+                                    <span>GitHub</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Stream Vibe -->
+                    <div class="portfolio-item portfolio-item-slideup">
                         <img src="./images/portfolio/streamvibe.png" alt="Stream Vibe" class="portfolio-image" loading="lazy">
-                        <div class="portfolio-overlay">
+                        <div class="portfolio-title-bar">
                             <h3>Stream Vibe</h3>
-                            <p>[HTML, SASS]</p>
-                            <p>A multipage website with a adaptive layout. <br>Role: Developer.</p>
-                            <a href="https://olegderevianko.github.io/Stream_VIbe/" class="portfolio-link-btn" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+                            <div class="title-bar-icon">
+                                <i class="fas fa-chevron-up"></i>
+                            </div>
+                        </div>
+                        <div class="portfolio-slideup-panel">
+                            <h3>Stream Vibe</h3>
+                            <div class="tech-tags">
+                                <span class="tag">HTML5</span>
+                                <span class="tag">SASS</span>
+                                <span class="tag">Multi-page</span>
+                            </div>
+                            <p class="portfolio-full-desc">
+                                Multi-page streaming platform website with content categories, video cards, pricing plans, and fully responsive cross-browser layout.
+                            </p>
+                            <div class="portfolio-panel-buttons">
+                                <a href="https://olegderevianko.github.io/Stream_VIbe/" class="portfolio-link-btn" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    <span>Live Demo</span>
+                                </a>
+                                <a href="https://github.com/OlegDerevianko/Stream_VIbe" class="portfolio-link-btn" target="_blank">
+                                    <i class="fa-brands fa-github"></i>
+                                    <span>GitHub</span>
+                                </a>
+                            </div>
                         </div>
                     </div>
-                    <div class="portfolio-item">
+
+                    <!-- Inferno -->
+                    <div class="portfolio-item portfolio-item-slideup">
                         <img src="./images/portfolio/inferno.png" alt="Inferno" class="portfolio-image" loading="lazy">
-                        <div class="portfolio-overlay">
+                        <div class="portfolio-title-bar">
                             <h3>Inferno</h3>
-                            <p>[HTML, CSS]</p>
-                            <p>Simple landing page. <br>Role: Developer. </p>
-                            <a href="https://olegderevianko.github.io/Inferno_landing/" class="portfolio-link-btn" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+                            <div class="title-bar-icon">
+                                <i class="fas fa-chevron-up"></i>
+                            </div>
+                        </div>
+                        <div class="portfolio-slideup-panel">
+                            <h3>Inferno</h3>
+                            <div class="tech-tags">
+                                <span class="tag">HTML5</span>
+                                <span class="tag">CSS3</span>
+                                <span class="tag">Landing Page</span>
+                            </div>
+                            <p class="portfolio-full-desc">
+                                Bold and dynamic gaming / e-sports themed landing page with hero section, team roster, match schedule, and sponsor showcase.
+                            </p>
+                            <div class="portfolio-panel-buttons">
+                                <a href="https://olegderevianko.github.io/Inferno_landing/" class="portfolio-link-btn" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    <span>Live Demo</span>
+                                </a>
+                                <a href="https://github.com/OlegDerevianko/Inferno_landing" class="portfolio-link-btn" target="_blank">
+                                    <i class="fa-brands fa-github"></i>
+                                    <span>GitHub</span>
+                                </a>
+                            </div>
                         </div>
                     </div>
-                    <div class="portfolio-item">
+
+                    <!-- ArtHome -->
+                    <div class="portfolio-item portfolio-item-slideup">
                         <img src="./images/portfolio/arthome.png" alt="ArtHome" class="portfolio-image" loading="lazy">
-                        <div class="portfolio-overlay">
+                        <div class="portfolio-title-bar">
                             <h3>ArtHome</h3>
-                            <p>[HTML, CSS, JS]</p>
-                            <p>Simple landing page with modals, contact form, sliders. <br>Role: Developer. </p>
-                            <a href="https://olegderevianko.github.io/ArtHome/" class="portfolio-link-btn" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+                            <div class="title-bar-icon">
+                                <i class="fas fa-chevron-up"></i>
+                            </div>
+                        </div>
+                        <div class="portfolio-slideup-panel">
+                            <h3>ArtHome</h3>
+                            <div class="tech-tags">
+                                <span class="tag">HTML5</span>
+                                <span class="tag">CSS3</span>
+                                <span class="tag">JavaScript</span>
+                                <span class="tag">Swiper Slider</span>
+                            </div>
+                            <p class="portfolio-full-desc">
+                                Art gallery / interior design website with image sliders, contact form with validation, modal windows for artwork details, and gallery grid.
+                            </p>
+                            <div class="portfolio-panel-buttons">
+                                <a href="https://olegderevianko.github.io/ArtHome/" class="portfolio-link-btn" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    <span>Live Demo</span>
+                                </a>
+                                <a href="https://github.com/OlegDerevianko/ArtHome" class="portfolio-link-btn" target="_blank">
+                                    <i class="fa-brands fa-github"></i>
+                                    <span>GitHub</span>
+                                </a>
+                            </div>
                         </div>
                     </div>
-                    <div class="portfolio-item">
+
+                    <!-- Alien NFT -->
+                    <div class="portfolio-item portfolio-item-slideup">
                         <img src="./images/portfolio/alien.png" alt="Alien" class="portfolio-image" loading="lazy">
-                        <div class="portfolio-overlay">
-                            <h3>Alien</h3>
-                            <p>[HTML, CSS]</p>
-                            <p>Alien NFT site <br>Team project. Role: Developer</p>
-                            <a href="https://olegderevianko.github.io/Alien_NFT/" class="portfolio-link-btn" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+                        <div class="portfolio-title-bar">
+                            <h3>Alien NFT</h3>
+                            <div class="title-bar-icon">
+                                <i class="fas fa-chevron-up"></i>
+                            </div>
+                        </div>
+                        <div class="portfolio-slideup-panel">
+                            <h3>Alien NFT</h3>
+                            <div class="tech-tags">
+                                <span class="tag">HTML5</span>
+                                <span class="tag">CSS3</span>
+                                <span class="tag">NFT Collection</span>
+                            </div>
+                            <p class="portfolio-full-desc">
+                                Futuristic NFT collection showcase website with card grid, rarity indicators, roadmap section, team member profiles, and social media integration.
+                            </p>
+                            <div class="portfolio-panel-buttons">
+                                <a href="https://olegderevianko.github.io/Alien_NFT/" class="portfolio-link-btn" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    <span>Live Demo</span>
+                                </a>
+                                <a href="https://github.com/OlegDerevianko/Alien_NFT" class="portfolio-link-btn" target="_blank">
+                                    <i class="fa-brands fa-github"></i>
+                                    <span>GitHub</span>
+                                </a>
+                            </div>
                         </div>
                     </div>
-                </div>            
-            </div>          
+                </div>                
+            </div>         
         </section>  
 
     </main>
@@ -276,6 +564,10 @@
             <p>Built with <i class="fas fa-heart"></i> using HTML5, CSS3, JavaScript</p>
         </div>    
     </footer>
+
+    <div class="animated-bg">
+        <div class="floating-symbols" id="floatingSymbols"></div>
+    </div>
 
     <div class="modal-overlay" id="contactModal">
         <div class="modal-container">
@@ -320,6 +612,8 @@
 <script src="./js/theme.js"></script>
 <script src="./js/scroll-top-btn.js"></script>
 <script src="./js/contact_modal.js"></script>
+<script src="/js/animated-bg.js"></script>
+<script src="./js/tooltip.js"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 

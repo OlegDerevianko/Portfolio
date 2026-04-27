@@ -9,6 +9,7 @@
     --text-secondary: #3D3D3D;
     --text-third: #A3ABB2;
     --text-overlay: #e0e0e0;
+    --text-white: #FFFFFF;
     /* Icons */
     --icons-color: #575757;
     --icons-hover: #1c1c1c;
@@ -116,13 +117,14 @@ button {
 }
 
 .theme-container {
+    position: relative;
     display: flex;
     justify-content: center;
+    align-items: center;
+    gap: 20px;
 }
-.toggle-container {
-    position: relative;
-}
-.toggle-container::before,
+
+/* .toggle-container::before,
 .toggle-container::after {
     content: '';
     position: absolute;
@@ -137,24 +139,85 @@ button {
 }
 .toggle-container::after {
     left: calc(50% + 30px);
-}
+} */
+/* ===== Основные стили кнопки (ваши, без изменений) ===== */
 .theme-toggle {
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
+    gap: 10px;
+    border-radius: 10px;
+    padding: 8px 16px;
     background: var(--bg-secondary);
     color: var(--text-secondary);
-    font-size: 20px;
+    font-size: 16px;
+    font-weight: 600;
     box-shadow: var(--shadow);
-    transition: all 0.3s;    
+    transition: all 0.3s;
+    cursor: pointer;
+    border: none;
+    position: relative;
 }
+
 .theme-toggle:hover {
     background: var(--btn-hover-bg);
     transition: all 0.3s;
 }
+
+/* Контейнер для toggle (полоска) */
+.toggle-container {
+    width: 50px;
+    height: 26px;
+    background: var(--bg-primary);
+    border-radius: 10px;
+    position: relative;
+    transition: all 0.3s ease;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* Ползунок (кружок) */
+.toggle-slider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 22px;
+    height: 22px;
+    background: transparent; 
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Иконка внутри ползунка */
+.toggle-slider i {
+    font-size: 20px;
+    color: var(--text-secondary);
+    transition: all 0.3s ease;
+}
+
+/* Светлая тема (солнце активно) */
+body:not(.dark-mode) .toggle-slider {
+    transform: translateX(0);
+}
+
+body:not(.dark-mode) .toggle-slider i {
+    transform: rotate(0deg);
+}
+
+/* Темная тема (ползунок уезжает вправо, иконка меняется) */
+body.dark-mode .toggle-slider {
+    transform: translateX(24px);
+}
+
+body.dark-mode .toggle-slider i {
+    transform: rotate(360deg);
+}
+
+
+
+
+
 
 .header-links {
     display: flex;
@@ -190,6 +253,7 @@ button {
     padding: 5px 10px;
     border-radius: 8px;
     font-size: 0.75rem;
+    font-weight: 600;
     white-space: nowrap;
     opacity: 0;
     visibility: hidden;
@@ -324,7 +388,6 @@ button {
     font-weight: 500;
 }
 
-
 .portfolio-section {
     display: flex;
     flex-direction: column;
@@ -332,15 +395,17 @@ button {
     padding: 50px 0;
 }
 .portfolio-container {
-    display: flex;
+    width: 100%;
     padding: 0 16px;
     animation: fadeIn 0.5s ease-in-out;
 }
 .portfolio-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-auto-rows: 380px; /* Все строки одинаковой высоты */
     gap: 30px;
 }
+
 .portfolio-item {
     position: relative;
     overflow: hidden;
@@ -349,68 +414,214 @@ button {
     box-shadow: var(--shadow);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.portfolio-item:hover {
-    transform: translateY(-5px);
+
+/* ===== Slide-up карточка с всегда видимым заголовком ===== */
+
+.portfolio-item-slideup {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    background-color: var(--bg-card);
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;    
+    /* Одинаковая высота для всех карточек */
+    
 }
-.portfolio-image {
+
+.portfolio-item-slideup:hover {
+    box-shadow: 0px 0px 20px 20px rgba(0,0,0,0.15);
+}
+
+.portfolio-item-slideup .portfolio-image {
     display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
-.portfolio-info {
-    padding: 20px;
-}
 
-.portfolio-description {
-    margin-bottom: 15px;
-}
-.portfolio-overlay {
+
+
+/* Всегда видимая полоса снизу */
+.portfolio-title-bar {
     position: absolute;
-    top: 0;
+    bottom: 0;
     left: 0;
     right: 0;
+    height: 55px; /* Фиксированная высота вместо % */
+    background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.9) 0%,
+        rgba(0, 0, 0, 0.7) 70%,
+        transparent 100%
+    );
+    backdrop-filter: blur(2px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    transition: opacity 0.3s ease;
+    z-index: 2;
+}
+
+.portfolio-title-bar h3 {
+    color: white;
+    font-size: 1.1rem;
+    margin: 0;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}
+
+.title-bar-icon {
+    color: white;
+    font-size: 0.9rem;
+    opacity: 0.8;
+    transition: transform 0.3s ease;
+}
+
+.portfolio-item-slideup:hover .title-bar-icon i {
+    transform: rotate(180deg);
+}
+
+/* Всплывающая панель */
+.portfolio-slideup-panel {
+    position: absolute;
     bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    transform: translateY(100%);
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 3;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background: rgba(0, 0, 0, 0.8);
-    opacity: 0;
-    transition: opacity 0.3s;
-    padding: 20px;
-    text-align: center;
+    gap: 10px;
+    border-top: 1px solid var(--btn-hover-bg);
+    
+    /* Панель может быть любой высоты, но не больше карточки */
+    max-height: 100%;
+    overflow-y: auto;
 }
-.portfolio-item:hover .portfolio-overlay {
-    opacity: 1;
+
+.portfolio-item-slideup:hover .portfolio-slideup-panel {
+    transform: translateY(0);
 }
-.portfolio-overlay h3 {
-    margin-bottom: 20px;
-    border-bottom: 1px solid var(--border-color);
+
+/* Стили внутри панели */
+.portfolio-slideup-panel h3 {
     color: var(--text-overlay);
+    margin: 0 0 4px 0;
+    font-size: 1.2rem;
+    border-left: 3px solid var(--btn-hover-bg);
+    padding-left: 12px;
 }
-.portfolio-overlay p {
-    font-size: 14px;
-    color: var(--text-overlay);
-    margin-bottom: 10px;
+
+.tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 5px 0;
 }
-.portfolio-link-btn {
-    position: absolute;
-    right: 20px;
-    top: 20px;
+
+.tag {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(4px);
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+
+
+.portfolio-full-desc {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.5;
+    margin: 5px 0;
+}
+
+/* Кнопки внутри панели */
+.portfolio-panel-buttons {
+    display: flex;
+    gap: 12px;
+    margin-top: 8px;
+}
+
+.portfolio-panel-buttons .portfolio-link-btn {
     display: flex;
     align-items: center;
-    justify-content: center;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background-color: var(--bg-secondary);
+    gap: 8px;
+    padding: 8px 16px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(4px);
+    color: white;
+    font-size: 0.85rem;
+    transition: all 0.25s ease;
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+.portfolio-panel-buttons .portfolio-link-btn i {
+    font-size: 0.9rem;
+}
+
+.portfolio-panel-buttons .portfolio-link-btn span {
+    font-weight: 500;
+}
+
+.portfolio-panel-buttons .portfolio-link-btn:hover {
+    background: var(--btn-hover-bg);
     color: var(--text-secondary);
-    transition: all 0.3s;
+    transform: translateY(-2px);
+    border-color: transparent;
 }
-.portfolio-link-btn:hover {
-    transform: scale(1.1);
+
+/* Анимация появления контента */
+.portfolio-slideup-panel h3,
+.portfolio-slideup-panel .tech-tags,
+.portfolio-slideup-panel .portfolio-full-desc,
+.portfolio-slideup-panel .portfolio-panel-buttons {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
 }
+
+.portfolio-item-slideup:hover .portfolio-slideup-panel h3 {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.05s;
+}
+.portfolio-item-slideup:hover .portfolio-slideup-panel .tech-tags {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.1s;
+}
+.portfolio-item-slideup:hover .portfolio-slideup-panel .portfolio-full-desc {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.15s;
+}
+.portfolio-item-slideup:hover .portfolio-slideup-panel .portfolio-panel-buttons {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.2s;
+}
+
+/* Dark mode адаптация */
+.dark-mode .portfolio-slideup-panel {
+    background-color: rgba(30, 41, 59, 0.85);
+}
+
+
+
+
 
 
 .footer {    
@@ -617,21 +828,20 @@ textarea.form-control {
 }
 .scroll-top {
     position: fixed;
-    bottom: 0;
-    right: 0;
-    width: 100%;
-    height: 15px;
-    background: var(--btn-primary-bg);
-    color: var(--text-primary);
+    bottom: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
-    cursor: pointer;
+    border-radius: 50%;
+    background: var(--btn-primary-bg);
+    color: var(--text-secondary);
     opacity: 0;
     visibility: hidden;
     transition: all 0.3s ease;
     z-index: 99;
-    box-shadow: var(--shadow);
 }
 .scroll-top.visible {
     opacity: 1;
@@ -666,10 +876,7 @@ textarea.form-control {
     .header-container {
         flex-direction: row;
         justify-content: space-between;
-    }
-    .theme-container {
-        padding: 0 60px;
-    }
+    }    
     .header-links {
         gap: 50px;
     }
@@ -712,4 +919,237 @@ textarea.form-control {
     .footer__container {
         padding: 0 80px;
     }
+}
+
+/* ===== Анимированный фон с плавающими символами ===== */
+
+/* Контейнер для фона */
+.animated-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+    background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+}
+
+/* Контейнер для плавающих символов */
+.floating-symbols {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+/* Стиль для каждого символа */
+.floating-symbol {
+    position: absolute;
+    font-size: 1.2rem;
+    font-weight: 400;
+    opacity: 0;
+    pointer-events: none;
+    user-select: none;
+    animation: floatSymbol linear infinite;
+}
+
+/* Анимация движения символов */
+@keyframes floatSymbol {
+    0% {
+        transform: translateY(-10vh) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.5;
+    }
+    50% {
+        opacity: 0.8;
+    }
+    90% {
+        opacity: 0.5;
+    }
+    100% {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Альтернативная анимация для разнообразия (снизу вверх) */
+@keyframes floatSymbolReverse {
+    0% {
+        transform: translateY(110vh) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.5;
+    }
+    50% {
+        opacity: 0.8;
+    }
+    90% {
+        opacity: 0.5;
+    }
+    100% {
+        transform: translateY(-10vh) rotate(-360deg);
+        opacity: 0;
+    }
+}
+
+/* Варианты символов для светлой и темной темы */
+.light-mode .floating-symbol {
+    color: rgba(0, 0, 0, 0.15);
+}
+
+.dark-mode .floating-symbol {
+    color: rgba(255, 255, 255, 0.08);
+}
+
+
+.bg-toggle-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border-radius: 10px;
+    padding: 8px 16px;
+    background: var(--bg-secondary);
+    color: var(--text-secondary);
+    font-size: 16px;
+    font-weight: 600;
+    box-shadow: var(--shadow);
+    transition: all 0.3s; 
+    /* Эффекты */
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+
+
+.bg-toggle-btn:hover {
+    background: var(--btn-hover-bg);
+}
+/* Активное состояние (нажатие) */
+.bg-toggle-btn:active {
+    transform: translateY(0);
+}
+.bg-toggle-btn i {
+    font-size: 20px;
+}
+
+/* Когда эффекты выключены */
+.bg-toggle-btn.effects-off {
+    border-color: #ef4444;
+}
+
+.bg-toggle-btn.effects-off i {
+    color: #ef4444;
+}
+
+
+/* ===== Более стильный тултип ===== */
+
+.tooltip {
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: transparent;
+    color: var(--tooltip-text);
+    font-size: 0.75rem;
+    font-weight: 600;
+    white-space: nowrap;
+    z-index: 10;
+    pointer-events: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+/* Анимация при появлении */
+.theme-toggle:hover .tooltip,
+.bg-toggle-btn:hover .tooltip {
+    opacity: 1;
+    visibility: visible;
+    bottom: -20px;}
+
+
+
+/* Анимация появления кнопки */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.bg-toggle-btn {
+    animation: fadeInUp 0.5s ease;
+}
+
+/* Если кнопка находится в тулбаре */
+.header-controls .bg-toggle-btn {
+    position: static;
+    padding: 8px 12px;
+    margin-left: 10px;
+}
+
+/* Стиль для переключателя (checkbox вариант) */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: var(--btn-hover-bg);
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+.setting-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 10px 0;
 }
