@@ -1,119 +1,11 @@
-:root {
-    /* Backgrounds */
-    --bg-primary: #e5e5e5;
-    --bg-secondary: #FFFFFF;
-    --bg-card: #FFFFFF;
-    --bg-hover: #F0F0F0;    
-    /* Text */
-    --text-primary: #575757;
-    --text-secondary: #3D3D3D;
-    --text-third: #A3ABB2;
-    --text-overlay: #e0e0e0;
-    --text-white: #FFFFFF;
-    /* Icons */
-    --icons-color: #575757;
-    --icons-hover: #1c1c1c;
-    /* Tooltip */
-    --tooltip-text: #575757;
-    /* Buttons & Actions */
-    --btn-primary-bg: #FFFFFF;
-    --btn-primary-text: #3D3D3D;
-    --btn-secondary-bg: #F0F0F0;
-    --btn-secondary-text: #111111;
-    --btn-accent-text: #FFFFFF;
-    --btn-hover-bg: #FBD144;    
-    /* Borders & Effects */
-    --border-color: #e0e0e0;
-    --border-light: #A3ABB2;
-    --shadow: 0px 0px 10px 10px rgba(0,0,0,0.1);
-}
-
-.dark-mode {
-    /* Backgrounds */
-    --bg-primary: #0F1724;
-    --bg-secondary: #1E293B;
-    --bg-card: #1E293B;
-    --bg-hover: #334155;    
-    /* Text */
-    --text-primary: #94A3B8;
-    --text-secondary: #F1F5F9;
-    --text-third: #64748B;
-    --text-overlay: #E2E8F0;    
-    /* Icons */
-    --icons-color: #94A3B8;
-    --icons-hover: #F1F5F9;    
-    /* Tooltip */
-    --tooltip-text: #CBD5E1;    
-    /* Buttons & Actions */
-    --btn-primary-bg: #1E293B;
-    --btn-primary-text: #F1F5F9;
-    --btn-secondary-bg: #334155;
-    --btn-secondary-text: #F1F5F9;
-    --btn-accent-text: #FFFFFF;
-    --btn-hover-bg: #3B82F6;      
-    /* Borders & Effects */
-    --border-color: #334155;
-    --border-light: #475569;
-    --shadow: 0px 0px 15px 15px rgba(0, 0, 0, 0.4);
-}
-
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-body {
-    overflow-x: hidden;
-    font-family: "Poppins", sans-serif;
-    font-size: 16px;
-    line-height: 1.66;
-    font-weight: 400;
-    color: var(--text-primary);
-    background-color: var(--bg-primary);
-}
-header {
-    max-width: 1440px;
-    margin: 0 auto;
-    padding: 16px 0;
-}
-main {
-    max-width: 1440px ;
-    margin: 0 auto;
-}
-footer {
-    max-width: 1440px;
-    margin: 0 auto;
-}
-ul, ol {
-    list-style: none;
-}
-a {
-    text-decoration: none;
-    color: inherit;
-}
-img {
-    display: block;
-    max-width: 100%;
-    height: auto;
-}
-button, input, textarea, select {
-    font: inherit;
-    border: none;
-    outline: none;
-}
-button {
-    background: transparent;
-    cursor: pointer;
-}
-
-
 .header-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 30px;
-    padding: 0 16px;
+    padding: 0 20px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    animation: fadeInDown 1s ease;
 }
 
 .theme-container {
@@ -123,25 +15,7 @@ button {
     align-items: center;
     gap: 20px;
 }
-
-/* .toggle-container::before,
-.toggle-container::after {
-    content: '';
-    position: absolute;
-    width: 50px;
-    height: 1px;
-    background: var(--text-primary); 
-    top: 50%;
-    transform: translateY(-50%);   
-}
-.toggle-container::before {
-    left: calc(50% - 80px);
-}
-.toggle-container::after {
-    left: calc(50% + 30px);
-} */
-/* ===== Основные стили кнопки (ваши, без изменений) ===== */
-.theme-toggle {
+.theme-button {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -149,38 +23,35 @@ button {
     border-radius: 10px;
     padding: 8px 16px;
     background: var(--bg-secondary);
-    color: var(--text-secondary);
     font-size: 16px;
     font-weight: 600;
-    box-shadow: var(--shadow);
-    transition: all 0.3s;
-    cursor: pointer;
-    border: none;
-    position: relative;
+    color: var(--text-secondary);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
-
-.theme-toggle:hover {
+.theme-button:hover {
     background: var(--btn-hover-bg);
+    color: var(--icons-hover);
+    transform: translateY(-3px);
     transition: all 0.3s;
 }
-
 /* Контейнер для toggle (полоска) */
 .toggle-container {
+    position: relative;
     width: 50px;
     height: 26px;
-    background: var(--bg-primary);
     border-radius: 10px;
-    position: relative;
-    transition: all 0.3s ease;
+    background: var(--bg-primary);
     box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
 }
-
 /* Ползунок (кружок) */
 .toggle-slider {
+    position: absolute;
     display: flex;
     align-items: center;
     justify-content: center;
-    position: absolute;
     top: 2px;
     left: 2px;
     width: 22px;
@@ -188,35 +59,53 @@ button {
     background: transparent; 
     transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
-
-/* Иконка внутри ползунка */
-.toggle-slider i {
+/* иконки внутри кнопок */
+.toggle-slider, .bg-toggle-btn i {
     font-size: 20px;
-    color: var(--text-secondary);
+    color: var(--icons-color);
     transition: all 0.3s ease;
+}
+/* Иконка при выключении эффекта (красная) */
+.bg-toggle-btn.effects-off i {
+    color: #ef4444;
 }
 
 /* Светлая тема (солнце активно) */
 body:not(.dark-mode) .toggle-slider {
     transform: translateX(0);
 }
-
 body:not(.dark-mode) .toggle-slider i {
     transform: rotate(0deg);
 }
-
 /* Темная тема (ползунок уезжает вправо, иконка меняется) */
 body.dark-mode .toggle-slider {
     transform: translateX(24px);
 }
-
 body.dark-mode .toggle-slider i {
     transform: rotate(360deg);
 }
-
-
-
-
+/* Тултип для кнопок темы */
+.tooltip {
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    z-index: 10;
+    color: var(--tooltip-text);
+    font-size: 12px;
+    font-weight: 600;
+    white-space: nowrap;
+    pointer-events: none;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-50%);
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+/* Анимация tooltip при появлении */
+.theme-button:hover .tooltip {
+    opacity: 1;
+    visibility: visible;
+    bottom: -20px;
+}
 
 
 .header-links {
@@ -224,7 +113,6 @@ body.dark-mode .toggle-slider i {
     flex-direction: column;
     gap: 30px;
 }
-
 .social-links,
 .contact-links {
     display: flex;
@@ -236,7 +124,7 @@ body.dark-mode .toggle-slider i {
 .contact-link {
     padding: 0 5px;
     color: var(--icons-color);
-    font-size: 1.5rem;
+    font-size: 24px;
     transition: color 0.2s, transform 0.2s;
 }
 .social-link:hover, 
@@ -248,18 +136,16 @@ body.dark-mode .toggle-slider i {
     position: absolute;
     bottom: -5px;
     left: 50%;
-    transform: translateX(-50%);
+    z-index: 10;
     color: var(--tooltip-text);
-    padding: 5px 10px;
-    border-radius: 8px;
-    font-size: 0.75rem;
+    font-size: 12px;
     font-weight: 600;
     white-space: nowrap;
+    pointer-events: none;
     opacity: 0;
     visibility: hidden;
-    transition: all 0.2s ease;
-    pointer-events: none;
-    z-index: 10;
+    transform: translateX(-50%);
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .social-link:hover .contact-tooltip,
 .contact-link:hover .contact-tooltip {
@@ -267,6 +153,7 @@ body.dark-mode .toggle-slider i {
     visibility: visible;
     bottom: -20px;
 }
+/* Анимация появления кнопки */
 
 
 .profile {
@@ -298,11 +185,16 @@ body.dark-mode .toggle-slider i {
     border-radius: 12px;
     object-fit: cover;
     border: 3px solid var(--border-color);
-    box-shadow: var(--shadow);    
+    box-shadow: var(--shadow);   
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    animation: fadeInLeft 1s ease;
 }
+
 .profile-title h1 {
     font-size: 32px;
-    color: var(--text-secondary);    
+    color: var(--text-secondary); 
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    animation: fadeInRight 1s ease;   
 }
 
 .about-content {
@@ -319,7 +211,24 @@ body.dark-mode .toggle-slider i {
 .about-text {
     text-align: justify;
     margin-bottom: 15px;
+    opacity: 0;
 }
+
+.about-text.typing-active {
+    opacity: 1;
+}
+
+.typing-cursor {
+    display: inline-block;
+    width: 2px;
+    height: 1.2em;
+    background-color: var(--btn-hover-bg);
+    margin-left: 2px;
+    vertical-align: middle;
+    animation: blink 0.75s step-end infinite;
+}
+
+
 .about-details {
     display: flex;
     flex-direction: column;
@@ -348,13 +257,18 @@ body.dark-mode .toggle-slider i {
     background-color: var(--btn-hover-bg);
     transform: translateY(-2px);
 }
+.button-primary {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    animation: fadeInLeft 1s ease;
+}
 .button-secondary {
     background-color: var(--btn-hover-bg);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    animation: fadeInRight 1s ease;   
 }
 .button-secondary i {
     margin-left: 10px;
 }
-
 .tech-stack {
     display: flex;
     flex-wrap: wrap;
@@ -367,6 +281,7 @@ body.dark-mode .toggle-slider i {
     background: var(--bg-secondary);
     box-shadow: var(--shadow);
 }
+
 .tech-item {
     display: flex;
     flex-direction: column;
@@ -374,18 +289,34 @@ body.dark-mode .toggle-slider i {
     gap: 8px;
     transition: all 0.2s ease;
 }
+
+/* Иконки - начальное состояние (невидимые) */
 .tech-item i {
     font-size: 2rem;
     color: var(--icons-color);
     transition: all 0.2s ease;
+    opacity: 0;
+    transform: scale(0.5);
 }
+
+/* Анимация появления с миганием */
+.tech-item.animate i {
+    animation: blinkAndAppear 1s ease forwards;
+}
+
+/* Текст появляется сразу */
+.tech-item .tech-name {
+    font-size: 12px;
+    font-weight: 500;
+    opacity: 1;
+}
+
+
+
+/* Hover эффект */
 .tech-item:hover i {
     color: var(--icons-hover);
     transform: translateY(-3px);
-}
-.tech-name {
-    font-size: 12px;
-    font-weight: 500;
 }
 
 .portfolio-section {
@@ -775,26 +706,7 @@ textarea.form-control {
 .custom-notification.notification-info {
     background-color: #3b82f6;
 }
-@keyframes slideInRight {
-    from {
-        transform: translateX(100%);
-        opacity: 0;
-    }
-    to {
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
-@keyframes slideOutRight {
-    from {
-        transform: translateX(0);
-        opacity: 1;
-    }
-    to {
-        transform: translateX(100%);
-        opacity: 0;
-    }
-}
+
 .custom-notification.hide {
     animation: slideOutRight 0.3s ease forwards;
 }
@@ -818,14 +730,7 @@ textarea.form-control {
     border-radius: 50%;
     animation: spin 0.6s linear infinite;
 }
-@keyframes spin {
-    to {transform: translateY(-50%) rotate(360deg);}
-}
 
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
 .scroll-top {
     position: fixed;
     bottom: 20px;
@@ -836,7 +741,7 @@ textarea.form-control {
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    background: var(--btn-primary-bg);
+    background: var(--bg-secondary);
     color: var(--text-secondary);
     opacity: 0;
     visibility: hidden;
@@ -879,13 +784,11 @@ textarea.form-control {
     }    
     .header-links {
         gap: 50px;
-    }
-    
+    }    
     .profile-title {
         flex-direction: row;
         justify-content: start;
     }
-
     .footer__container {
         flex-direction: row;
         justify-content: space-between;
@@ -921,7 +824,7 @@ textarea.form-control {
     }
 }
 
-/* ===== Анимированный фон с плавающими символами ===== */
+
 
 /* Контейнер для фона */
 .animated-bg {
@@ -934,7 +837,6 @@ textarea.form-control {
     overflow: hidden;
     background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
 }
-
 /* Контейнер для плавающих символов */
 .floating-symbols {
     position: absolute;
@@ -944,7 +846,6 @@ textarea.form-control {
     height: 100%;
     pointer-events: none;
 }
-
 /* Стиль для каждого символа */
 .floating-symbol {
     position: absolute;
@@ -956,195 +857,10 @@ textarea.form-control {
     animation: floatSymbol linear infinite;
 }
 
-/* Анимация движения символов */
-@keyframes floatSymbol {
-    0% {
-        transform: translateY(-10vh) rotate(0deg);
-        opacity: 0;
-    }
-    10% {
-        opacity: 0.5;
-    }
-    50% {
-        opacity: 0.8;
-    }
-    90% {
-        opacity: 0.5;
-    }
-    100% {
-        transform: translateY(110vh) rotate(360deg);
-        opacity: 0;
-    }
-}
-
-/* Альтернативная анимация для разнообразия (снизу вверх) */
-@keyframes floatSymbolReverse {
-    0% {
-        transform: translateY(110vh) rotate(0deg);
-        opacity: 0;
-    }
-    10% {
-        opacity: 0.5;
-    }
-    50% {
-        opacity: 0.8;
-    }
-    90% {
-        opacity: 0.5;
-    }
-    100% {
-        transform: translateY(-10vh) rotate(-360deg);
-        opacity: 0;
-    }
-}
-
 /* Варианты символов для светлой и темной темы */
 .light-mode .floating-symbol {
     color: rgba(0, 0, 0, 0.15);
 }
-
 .dark-mode .floating-symbol {
     color: rgba(255, 255, 255, 0.08);
-}
-
-
-.bg-toggle-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    border-radius: 10px;
-    padding: 8px 16px;
-    background: var(--bg-secondary);
-    color: var(--text-secondary);
-    font-size: 16px;
-    font-weight: 600;
-    box-shadow: var(--shadow);
-    transition: all 0.3s; 
-    /* Эффекты */
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    backdrop-filter: blur(10px);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-}
-
-
-
-.bg-toggle-btn:hover {
-    background: var(--btn-hover-bg);
-}
-/* Активное состояние (нажатие) */
-.bg-toggle-btn:active {
-    transform: translateY(0);
-}
-.bg-toggle-btn i {
-    font-size: 20px;
-}
-
-.bg-toggle-btn.effects-off i {
-    color: #ef4444;
-}
-
-
-/* ===== Более стильный тултип ===== */
-
-.tooltip {
-    position: absolute;
-    bottom: -5px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: transparent;
-    color: var(--tooltip-text);
-    font-size: 0.75rem;
-    font-weight: 600;
-    white-space: nowrap;
-    z-index: 10;
-    pointer-events: none;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-}
-/* Анимация при появлении */
-.theme-toggle:hover .tooltip,
-.bg-toggle-btn:hover .tooltip {
-    opacity: 1;
-    visibility: visible;
-    bottom: -20px;}
-
-
-
-/* Анимация появления кнопки */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.bg-toggle-btn {
-    animation: fadeInUp 0.5s ease;
-}
-
-/* Если кнопка находится в тулбаре */
-.header-controls .bg-toggle-btn {
-    position: static;
-    padding: 8px 12px;
-    margin-left: 10px;
-}
-
-/* Стиль для переключателя (checkbox вариант) */
-.switch {
-    position: relative;
-    display: inline-block;
-    width: 60px;
-    height: 34px;
-}
-
-.switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-}
-
-.slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #ccc;
-    transition: 0.4s;
-    border-radius: 34px;
-}
-
-.slider:before {
-    position: absolute;
-    content: "";
-    height: 26px;
-    width: 26px;
-    left: 4px;
-    bottom: 4px;
-    background-color: white;
-    transition: 0.4s;
-    border-radius: 50%;
-}
-
-input:checked + .slider {
-    background-color: var(--btn-hover-bg);
-}
-
-input:checked + .slider:before {
-    transform: translateX(26px);
-}
-
-.setting-item {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 20px;
-    padding: 10px 0;
 }

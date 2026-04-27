@@ -1,0 +1,108 @@
+:root {
+    /* Backgrounds */
+    --bg-primary: #e5e5e5;
+    --bg-secondary: #FFFFFF;
+    --bg-card: #FFFFFF;
+    --bg-hover: #F0F0F0;    
+    /* Text */
+    --text-primary: #575757;
+    --text-secondary: #3D3D3D;
+    --text-third: #A3ABB2;
+    --text-overlay: #e0e0e0;
+    --text-white: #FFFFFF;
+    /* Icons */
+    --icons-color: #575757;
+    --icons-hover: #1c1c1c;
+    /* Tooltip */
+    --tooltip-text: #575757;
+    /* Buttons & Actions */
+    --btn-primary-bg: #FFFFFF;
+    --btn-primary-text: #3D3D3D;
+    --btn-secondary-bg: #F0F0F0;
+    --btn-secondary-text: #111111;
+    --btn-accent-text: #FFFFFF;
+    --btn-hover-bg: #FBD144;    
+    /* Borders & Effects */
+    --border-color: #e0e0e0;
+    --border-light: #A3ABB2;
+    --shadow: 0px 0px 10px 10px rgba(0,0,0,0.1);
+}
+
+.dark-mode {
+    /* Backgrounds */
+    --bg-primary: #0F1724;
+    --bg-secondary: #1E293B;
+    --bg-card: #1E293B;
+    --bg-hover: #334155;    
+    /* Text */
+    --text-primary: #94A3B8;
+    --text-secondary: #F1F5F9;
+    --text-third: #64748B;
+    --text-overlay: #E2E8F0;    
+    /* Icons */
+    --icons-color: #94A3B8;
+    --icons-hover: #F1F5F9;    
+    /* Tooltip */
+    --tooltip-text: #CBD5E1;    
+    /* Buttons & Actions */
+    --btn-primary-bg: #1E293B;
+    --btn-primary-text: #F1F5F9;
+    --btn-secondary-bg: #334155;
+    --btn-secondary-text: #F1F5F9;
+    --btn-accent-text: #FFFFFF;
+    --btn-hover-bg: #3B82F6;      
+    /* Borders & Effects */
+    --border-color: #334155;
+    --border-light: #475569;
+    --shadow: 0px 0px 15px 15px rgba(0, 0, 0, 0.4);
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    overflow-x: hidden;
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    line-height: 1.66;
+    font-weight: 400;
+    color: var(--text-primary);
+    background-color: var(--bg-primary);
+}
+header {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 16px 0;
+}
+main {
+    max-width: 1440px ;
+    margin: 0 auto;
+}
+footer {
+    max-width: 1440px;
+    margin: 0 auto;
+}
+ul, ol {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+button, input, textarea, select {
+    font: inherit;
+    border: none;
+    outline: none;
+}
+button {
+    background: transparent;
+    cursor: pointer;
+}

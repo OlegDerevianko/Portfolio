@@ -3,13 +3,103 @@
 class FloatingSymbolsBackground {
     constructor() {
         this.symbols = [
-            '∑', '∫', '√', '∞', 'π', '≈', '≠', '≤', '≥', '±', '÷', '×',
-            '{', '}', '(', ')', '[', ']', '<', '>', '&', '|', '!', '?',
-            'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M',
-            'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z',
-            '❤', '★', '☆', '✿', '❀', '✦', '✧', 'JS', 'CSS', 'HTML', 'API',
-            '</>', '{}', '[]', '()', '=>', '<=', '===', '!=='
-        ];
+    // ===== МАТЕМАТИЧЕСКИЕ СИМВОЛЫ =====
+    '∑', '∫', '√', '∞', 'π', '≈', '≠', '≤', '≥', '±', '÷', '×',
+    '∂', '∆', '∏', '∐', '∛', '∜', '∝', '∟', '∠', '∡', '∢',
+    '∣', '∤', '∥', '∦', '∧', '∨', '∩', '∪', '∫', '∬', '∭',
+    '∮', '∯', '∰', '∴', '∵', '∶', '∷', '∼', '∾', '∿', '≀',
+    '≅', '≊', '≍', '≎', '≏', '≐', '≑', '≒', '≓', '≔', '≕',
+    
+    // ===== СКОБКИ И ОПЕРАТОРЫ =====
+    '{', '}', '(', ')', '[', ']', '<', '>', '&', '|', '!', '?',
+    '«', '»', '‹', '›', '⟨', '⟩', '〈', '〉', '⦃', '⦄', '⟪', '⟫',
+    '⟬', '⟭', '⌈', '⌉', '⌊', '⌋', '⌜', '⌝', '⌞', '⌟',
+    
+    // ===== БУКВЫ (латиница) =====
+    'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M',
+    'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z',
+    'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm',
+    'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',
+    
+    // ===== СПЕЦИАЛЬНЫЕ СИМВОЛЫ =====
+    '©', '®', '™', '§', '¶', '†', '‡', '•', '◘', '○', '◙', '♂', '♀',
+    '♪', '♫', '☼', '►', '◄', '↕', '‼', '¶', '§', '▬', '↨', '↑', '↓',
+    '→', '←', '∟', '↔', '▲', '▼', '◆', '◇', '◎', '●', '◢', '◣', '◤', '◥',
+    '░', '▒', '▓', '█', '▄', '▀', '■', '▬', '▭', '▮', '▯', '▰', '▱',
+    '☀', '☁', '☂', '☃', '☄', '★', '☆', '☇', '☈', '☉', '☊', '☋', '☌',
+    '☍', '☎', '☏', '☐', '☑', '☒', '☓', '☔', '☕', '☖', '☗', '☘', '☙',
+    
+    // ===== СИМВОЛЫ ВАЛЮТ =====
+    '$', '€', '£', '¥', '₽', '₿', '₹', '₩', '₪', '₫', '¢', '₡', '₦',
+    '₱', '₲', '₴', '₵', '₸', '₹', '₺', '₻', '₼', '₽', '₾', '₿',
+    '¤', '฿', '₭', '₮', '₯', '₰', '₱', '₲', '₳', '₴', '₵', '₶', '₷',
+    
+    // ===== СТРЕЛКИ =====
+    '↑', '↓', '←', '→', '↖', '↗', '↙', '↘', '↺', '↻', '↼', '↽',
+    '↾', '↿', '⇀', '⇁', '⇂', '⇃', '⇄', '⇅', '⇆', '⇇', '⇈', '⇉',
+    '⇊', '⇋', '⇌', '⇍', '⇎', '⇏', '⇐', '⇑', '⇒', '⇓', '⇔', '⇕',
+    '⇖', '⇗', '⇘', '⇙', '⇚', '⇛', '⇜', '⇝', '⇞', '⇟', '⇠', '⇡',
+    '⇢', '⇣', '⇤', '⇥', '⇦', '⇧', '⇨', '⇩', '⇪', '➔', '➙', '➘',
+    
+    // ===== HTML/XML ТЕГИ =====
+    '&lt;', '&gt;', '&amp;', '&quot;', '&apos;', '&copy;', '&reg;',
+    '&trade;', '&dollar;', '&euro;', '&pound;', '&yen;', '&sect;',
+    '&nbsp;', '&brvbar;', '&sect;', '&uml;', '&acute;', '&cedil;',
+    
+    // ===== СИМВОЛЫ КОДА =====
+    ';', ':', '@', '#', '%', '^', '*', '_', '=', '+', '-', '/', '\\',
+    '~', '`', '"', "'", ',', '.', '|', '¦', '¬', '¯', '˘', '˙', '˚',
+    '˛', 'ˇ', '˝', 'ˉ', 'ˊ', 'ˋ', 'ˌ', 'ˍ', 'ˎ', 'ˏ', 'ː', 'ˑ',
+    '‒', '–', '—', '―', '‖', '‗', '‘', '’', '‚', '‛', '“', '”', '„',
+    
+    // ===== ТЕХНОЛОГИЧЕСКИЕ СИМВОЛЫ =====
+    '</>', '{}', '[]', '()', '=>', '<=', '===', '!==', '&&', '||',
+    '++', '--', '+=', '-=', '*=', '/=', '%=', '**', '//', '??',
+    '?.', '??=', '&&=', '||=', '??=', '::', '...', '/*', '*/', '//',
+    
+    // ===== СЛОВА И АББРЕВИАТУРЫ =====
+    'JS', 'TS', 'CSS', 'SASS', 'SCSS', 'HTML', 'XML', 'JSON', 'API',
+    'WEB', 'DEV', 'CODE', 'DATA', 'CLOUD', 'AI', 'ML', 'UX', 'UI',
+    'APP', 'SITE', 'BLOG', 'SHOP', 'NEWS', 'BETA', 'ALPHA', 'DEMO',
+    'v1', 'v2', 'v3', '0.1', '1.0', '2.0', '3.0', '4.0', '5.0',
+    'REACT', 'VUE', 'NEXT', 'NODE', 'PYTHON', 'JAVA', 'PHP', 'RUBY',
+    'SQL', 'NoSQL', 'GIT', 'DOCKER', 'AWS', 'AZURE', 'GO', 'RUST',
+    'SWIFT', 'KOTLIN', 'FLUTTER', 'DART', 'GRAPHQL', 'REST', 'SOAP',
+    
+    // ===== ТЕХНОЛОГИИ И ФРЕЙМВОРКИ =====
+    'React', 'Angular', 'Vue', 'Svelte', 'Next.js', 'Nuxt',
+    'Node.js', 'Express', 'Django', 'Flask', 'Spring', 'Laravel',
+    'Symfony', 'Rails', 'Phoenix', 'FastAPI', 'NestJS', 'Gin',
+    
+    // ===== ПРОГРАММИРОВАНИЕ =====
+    'function', 'const', 'let', 'var', 'if', 'else', 'for', 'while',
+    'return', 'class', 'export', 'import', 'default', 'new', 'try',
+    'catch', 'finally', 'throw', 'async', 'await', 'yield', 'typeof',
+    'instanceof', 'in', 'of', 'delete', 'void', 'null', 'undefined',
+    
+    // ===== КОМПЬЮТЕРНЫЕ ТЕРМИНЫ =====
+    'CPU', 'GPU', 'RAM', 'ROM', 'SSD', 'HDD', 'USB', 'HDMI', 'VGA',
+    'BIOS', 'UEFI', 'TCP', 'UDP', 'HTTP', 'HTTPS', 'FTP', 'SSH',
+    'SSL', 'TLS', 'DNS', 'DHCP', 'IP', 'MAC', 'LAN', 'WAN', 'VPN',
+    
+    // ===== СЛОВА НА АНГЛИЙСКОМ =====
+    'Hello', 'World', 'Code', 'Dev', 'Tech', 'Soft', 'Hard', 'Fast',
+    'Smart', 'Cool', 'Pro', 'Max', 'Ultra', 'Plus', 'New', 'Old',
+    'Good', 'Best', 'Top', 'High', 'Low', 'Big', 'Small', 'Hot', 'Cold',   
+    
+    // ===== HEX КОДЫ =====
+    '0x00', '0xFF', '#000', '#FFF', '#F00', '#0F0', '#00F',
+    '0x7F', '0x80', '0x01', '0x10', '0x20', '0x40', '0x80',
+    
+    // ===== ПРОГРАММИСТСКИЙ СЛЕНГ =====
+    'WIP', 'TODO', 'FIXME', 'HACK', 'BUG', 'FIX', 'PATCH', 'COMMIT',
+    'PUSH', 'PULL', 'FORK', 'CLONE', 'MERGE', 'REBASE', 'BRANCH',
+    
+    // ===== БИНАРНЫЙ КОД =====
+    '0', '1', '01', '10', '00', '11', '101', '010', '111', '000',
+    '001', '100', '110', '1010', '0101', '1111', '0000',
+    
+];
         
         this.container = document.getElementById('floatingSymbols');
         if (!this.container) {
@@ -174,7 +264,7 @@ class FloatingSymbolsBackground {
 class BackgroundEffectManager {
     constructor() {
         this.isEnabled = true;
-        this.button = document.getElementById('toggleBgEffect');
+        this.button = document.getElementById('BgEffectToggle');
         this.bgContainer = document.querySelector('.animated-bg');
         this.symbolsContainer = document.getElementById('floatingSymbols');
         this.floatingSymbolsInstance = null;
@@ -289,14 +379,12 @@ class BackgroundEffectManager {
             if (icon) {
                 icon.className = 'fas fa-circle-check';
             }
-            this.updateTooltip('Disable background animation');
         } else {
             this.button.classList.add('effects-off');
             if (statusSpan) statusSpan.textContent = 'OFF';
             if (icon) {
                 icon.className = 'fas fa-circle-xmark';
             }
-            this.updateTooltip('Enable background animation');
         }
     }
     
@@ -349,7 +437,7 @@ class BackgroundEffectManager {
         
         toast.style.cssText = `
             position: fixed;
-            bottom: 100px;
+            top: 100px;
             right: 30px;
             background: var(--bg-card, #1e293b);
             color: var(--text-secondary, #f1f5f9);

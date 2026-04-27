@@ -10,6 +10,8 @@
     <meta property="og:type" content="website">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio Oleg Derevianko</title>
+    <link rel="stylesheet" href="./css/root-reset.css">
+    <link rel="stylesheet" href="./css/animations.css">
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,55 +21,80 @@
 <body>
     <header class="header">
         <div class="header-container">
+
             <div class="theme-container">
-                                <!-- Кнопка переключения темы -->
-                <button class="theme-toggle" id="themeToggle">
+                <!-- Кнопка переключения темы -->
+                <button class="theme-toggle-btn theme-button" id="themeToggle">
                     <div class="toggle-container">
                         <div class="toggle-slider">
                             <i class="fas fa-sun"></i>
                         </div>
                     </div>
                 </button>
-
                 <!-- Кнопка управления фоном -->
-                <button id="toggleBgEffect" class="bg-toggle-btn" title="Toggle floating symbols animation">
+                <button class="bg-toggle-btn theme-button" id="BgEffectToggle" >
                     <i class="fas fa-circle-check"></i>
                     <span class="toggle-status">ON</span>
                 </button>
             </div> 
+
             <div class="header-links">
+
                 <div class="social-links">
-                    <a href="https://github.com/OlegDerevianko" class="social-link" target="_blank">
+                    <a 
+                    href="https://github.com/OlegDerevianko" 
+                    class="social-link" 
+                    target="_blank">
                         <i class="fab fa-github"></i>
                         <span class="contact-tooltip">GitHub</span>
                     </a>
-                    <a href="https://www.linkedin.com/in/oleg-derevianko-s/" class="social-link" target="_blank">
+                    <a 
+                    href="https://www.linkedin.com/in/oleg-derevianko-s/" 
+                    class="social-link" 
+                    target="_blank">
                         <i class="fab fa-linkedin"></i>
                         <span class="contact-tooltip">LinkedIn</span>
                     </a>
-                    <a href="viber://chat?number=%2B380632537461" class="social-link" target="_blank">
+                    <a 
+                    href="viber://chat?number=%2B380632537461" 
+                    class="social-link" 
+                    target="_blank">
                         <i class="fab fa-viber"></i>
                         <span class="contact-tooltip">Viber</span>
                     </a>
-                    <a href="tg://resolve?domain=@Azzruell" class="social-link" target="_blank">
+                    <a 
+                    href="tg://resolve?domain=@Azzruell" 
+                    class="social-link" 
+                    target="_blank">
                         <i class="fab fa-telegram"></i>
                         <span class="contact-tooltip">Telegram</span>
                     </a>
-                    <a href="https://www.instagram.com/oleg.derevianko.s/" class="social-link" target="_blank">
+                    <a 
+                    href="https://www.instagram.com/oleg.derevianko.s/" 
+                    class="social-link" 
+                    target="_blank">
                         <i class="fab fa-instagram"></i>
                         <span class="contact-tooltip">Intagram</span>
                     </a>
-                    <a href="whatsapp://send?phone=+380632537461" class="social-link" target="_blank">
+                    <a 
+                    href="whatsapp://send?phone=+380632537461" 
+                    class="social-link" 
+                    target="_blank">
                         <i class="fab fa-whatsapp"></i>
                         <span class="contact-tooltip">Whatsapp</span>
                     </a>
                 </div>
+
                 <div class="contact-links">
-                    <a href="mailto:oleg.derevianko.s@gmail.com" class="contact-link">
+                    <a 
+                    href="mailto:oleg.derevianko.s@gmail.com" 
+                    class="contact-link">
                         <i class="fas fa-envelope"></i>
                         <span class="contact-tooltip">oleg.derevianko.s@gmail.com</span>
                     </a>
-                    <a href="tel:+380632537461" class="contact-link">
+                    <a 
+                    href="tel:+380632537461" 
+                    class="contact-link">
                         <i class="fas fa-phone"></i>
                         <span class="contact-tooltip">+380632537461</span>
                     </a>                
@@ -87,7 +114,7 @@
                     </div>
                     <div class="about-content">
                         <h2>About Me</h2>
-                        <p class="about-text">
+                        <p class="about-text typing-text">
                             I'm a passionate Frontend Developer with a strong background in management and analytics. 
                             My experience in coordinating complex processes and attention to detail helps me create 
                             clean, maintainable code and user-friendly interfaces.
@@ -148,6 +175,10 @@
                     <div class="tech-item" data-tech="Bootstrap">
                         <i class="fa-brands fa-bootstrap"></i>
                         <span class="tech-name">Bootstrap</span>
+                    </div>
+                    <div class="tech-item" data-tech="Gulp">
+                        <i class="fa-brands fa-gulp"></i>
+                        <span class="tech-name">Gulp</span>
                     </div>
                     <div class="tech-item" data-tech="Node.js">
                         <i class="fa-brands fa-node"></i>
@@ -612,6 +643,8 @@
 <script src="./js/theme.js"></script>
 <script src="./js/animated-bg.js"></script>
 <script src="./js/main.js"></script>
+<script src="./js/typing-text.js"></script>
+<script src="./js/blink-and-appear.js"></script>
 <script src="./js/scroll-top-btn.js"></script>
 <script src="./js/contact_modal.js"></script>
 

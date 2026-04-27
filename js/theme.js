@@ -85,7 +85,7 @@
         }
         
         // Тултип для кнопки фона
-        const bgButton = document.getElementById('toggleBgEffect');
+        const bgButton = document.getElementById('BgEffectToggle');
         if (bgButton) {
             const savedBgState = localStorage.getItem('backgroundEffectEnabled');
             const isBgEnabled = savedBgState !== 'false';
