@@ -295,7 +295,6 @@ class BackgroundEffectManager {
             if (statusSpan) statusSpan.textContent = 'OFF';
             if (icon) {
                 icon.className = 'fas fa-circle-xmark';
-                icon.style.color = '#ef4444';
             }
             this.updateTooltip('Enable background animation');
         }

@@ -1040,11 +1040,6 @@ textarea.form-control {
     font-size: 20px;
 }
 
-/* Когда эффекты выключены */
-.bg-toggle-btn.effects-off {
-    border-color: #ef4444;
-}
-
 .bg-toggle-btn.effects-off i {
     color: #ef4444;
 }
