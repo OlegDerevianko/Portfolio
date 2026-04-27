@@ -1,54 +1,4 @@
-// ===== Добавление тултипов для кнопок =====
-
-(function initTooltips() {
-    // Функция добавления тултипа к кнопке
-    function addTooltip(button, initialText) {
-        if (!button) return;
-        
-        // Удаляем существующий тултип, если есть
-        const existingTooltip = button.querySelector('.tooltip');
-        if (existingTooltip) {
-            existingTooltip.remove();
-        }
-        
-        // Создаем новый тултип
-        const tooltip = document.createElement('div');
-        tooltip.className = 'tooltip';
-        tooltip.textContent = initialText;
-        button.appendChild(tooltip);
-        
-        return tooltip;
-    }
-    
-    // Добавляем тултип для кнопки темы
-    const themeToggle = document.getElementById('themeToggle');
-    let themeTooltip = null;
-    
-    if (themeToggle) {
-        const isDark = document.body.classList.contains('dark-mode');
-        const initialThemeText = isDark ? 'Switch to light mode' : 'Switch to dark mode';
-        themeTooltip = addTooltip(themeToggle, initialThemeText);
-    }
-    
-    // Добавляем тултип для кнопки фона
-    const bgButton = document.getElementById('toggleBgEffect');
-    let bgTooltip = null;
-    
-    if (bgButton) {
-        const savedBgState = localStorage.getItem('backgroundEffectEnabled');
-        const isBgEnabled = savedBgState !== 'false';
-        const initialBgText = isBgEnabled ? 'Disable background animation' : 'Enable background animation';
-        bgTooltip = addTooltip(bgButton, initialBgText);
-    }
-    
-    // Сохраняем ссылки на тултипы в глобальном объекте
-    window.tooltips = {
-        theme: themeTooltip,
-        bg: bgTooltip
-    };
-})();
-
-// ===== Переключение темы с обновлением тултипа =====
+// ===== Переключение темы и тултипы =====
 
 (function initThemeToggle() {
     if (document.readyState === 'loading') {
@@ -63,16 +13,13 @@
         
         if (!themeToggle) return;
         
-        const toggleSlider = themeToggle.querySelector('.toggle-slider');
         const toggleIcon = themeToggle.querySelector('.toggle-slider i');
-        
         if (!toggleIcon) return;
         
         // Функция обновления тултипа
         function updateThemeTooltip() {
             const isDark = body.classList.contains('dark-mode');
             const tooltip = themeToggle.querySelector('.tooltip');
-            
             if (tooltip) {
                 tooltip.textContent = isDark ? 'Switch to light mode' : 'Switch to dark mode';
             }
@@ -98,93 +45,51 @@
             updateToggleIcon();
             updateThemeTooltip();
             
-            if (window.floatingSymbolsInstance) {
-                setTimeout(() => window.floatingSymbolsInstance.updateThemeColors(), 50);
-            }
+            // Уведомляем другие компоненты о смене темы
+            window.dispatchEvent(new CustomEvent('themeChanged', {
+                detail: { isDark: body.classList.contains('dark-mode') }
+            }));
         });
         
-        console.log('🌓 Theme toggle with tooltip initialized');
+        console.log('🌓 Theme toggle initialized');
     }
 })();
 
-// ===== Управление фоном с обновлением тултипа =====
-
-(function initBgToggle() {
+// ===== Добавление тултипов для кнопок =====
+(function initTooltips() {
     if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', init);
+        document.addEventListener('DOMContentLoaded', addTooltips);
     } else {
-        init();
+        addTooltips();
     }
     
-    function init() {
+    function addTooltips() {
+        function addTooltip(button, initialText) {
+            if (!button) return;
+            
+            const existingTooltip = button.querySelector('.tooltip');
+            if (existingTooltip) existingTooltip.remove();
+            
+            const tooltip = document.createElement('div');
+            tooltip.className = 'tooltip';
+            tooltip.textContent = initialText;
+            button.appendChild(tooltip);
+            return tooltip;
+        }
+        
+        // Тултип для кнопки темы
+        const themeToggle = document.getElementById('themeToggle');
+        if (themeToggle) {
+            const isDark = document.body.classList.contains('dark-mode');
+            addTooltip(themeToggle, isDark ? 'Switch to light mode' : 'Switch to dark mode');
+        }
+        
+        // Тултип для кнопки фона
         const bgButton = document.getElementById('toggleBgEffect');
-        
-        if (!bgButton) return;
-        
-        // Функция обновления тултипа для фона
-        function updateBgTooltip(enabled) {
-            const tooltip = bgButton.querySelector('.tooltip');
-            if (tooltip) {
-                tooltip.textContent = enabled ? 'Disable background animation' : 'Enable background animation';
-            }
+        if (bgButton) {
+            const savedBgState = localStorage.getItem('backgroundEffectEnabled');
+            const isBgEnabled = savedBgState !== 'false';
+            addTooltip(bgButton, isBgEnabled ? 'Disable background animation' : 'Enable background animation');
         }
-        
-        // Функция обновления статуса кнопки
-        function updateButtonStatus(enabled) {
-            const statusSpan = bgButton.querySelector('.toggle-status');
-            if (statusSpan) {
-                statusSpan.textContent = enabled ? 'ON' : 'OFF';
-            }
-            
-            if (enabled) {
-                bgButton.classList.remove('effects-off');
-                const icon = bgButton.querySelector('i');
-                if (icon) {
-                    icon.className = 'fas fa-star-of-life';
-                }
-                bgButton.setAttribute('title', 'Disable background animation');
-            } else {
-                bgButton.classList.add('effects-off');
-                const icon = bgButton.querySelector('i');
-                if (icon) {
-                    icon.className = 'fas fa-ban';
-                }
-                bgButton.setAttribute('title', 'Enable background animation');
-            }
-        }
-        
-        // Загружаем состояние
-        const savedState = localStorage.getItem('backgroundEffectEnabled');
-        const isEnabled = savedState !== 'false';
-        
-        updateButtonStatus(isEnabled);
-        updateBgTooltip(isEnabled);
-        
-        bgButton.addEventListener('click', () => {
-            const currentState = !bgButton.classList.contains('effects-off');
-            const newState = !currentState;
-            
-            updateButtonStatus(newState);
-            updateBgTooltip(newState);
-            localStorage.setItem('backgroundEffectEnabled', newState);
-            
-            if (window.floatingSymbolsInstance) {
-                if (newState) {
-                    window.floatingSymbolsInstance.startAnimation();
-                } else {
-                    window.floatingSymbolsInstance.stopAnimation();
-                }
-            }
-            
-            // Визуальная обратная связь
-            bgButton.style.transform = 'scale(0.95)';
-            setTimeout(() => {
-                if (bgButton) {
-                    bgButton.style.transform = '';
-                }
-            }, 150);
-        });
-        
-        console.log('🎨 Background toggle with tooltip initialized');
     }
 })();

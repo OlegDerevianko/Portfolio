@@ -3,70 +3,16 @@
 class FloatingSymbolsBackground {
     constructor() {
         this.symbols = [
-            // Математические символы
             '∑', '∫', '√', '∞', 'π', '≈', '≠', '≤', '≥', '±', '÷', '×',
-            '∂', '∆', '∏', '∐', '∑', '√', '∛', '∜', '∝', '∞', '∟', '∠',
-            '∡', '∢', '∣', '∤', '∥', '∦', '∧', '∨', '∩', '∪', '∫', '∬',
-            '∭', '∮', '∯', '∰', '∱', '∲', '∳', '∴', '∵', '∶', '∷',
-            
-            // Скобки и операторы
             '{', '}', '(', ')', '[', ']', '<', '>', '&', '|', '!', '?',
-            '«', '»', '‹', '›', '⟨', '⟩', '〈', '〉', '⦃', '⦄',
-            
-            // Буквы разных алфавитов
             'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M',
             'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z',
-            'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm',
-            'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',
-            'α', 'β', 'γ', 'δ', 'ε', 'ζ', 'η', 'θ', 'ι', 'κ', 'λ', 'μ', 'ν',
-            'ξ', 'ο', 'π', 'ρ', 'σ', 'τ', 'υ', 'φ', 'χ', 'ψ', 'ω',
-            'Α', 'Β', 'Γ', 'Δ', 'Ε', 'Ζ', 'Η', 'Θ', 'Ι', 'Κ', 'Λ', 'Μ', 'Ν',
-            'Ξ', 'Ο', 'Π', 'Ρ', 'Σ', 'Τ', 'Υ', 'Φ', 'Χ', 'Ψ', 'Ω',
-            
-            // Специальные символы
-            '©', '®', '™', '§', '¶', '†', '‡', '•', '◘', '○', '◙', '♂', '♀',
-            '♪', '♫', '☼', '►', '◄', '↕', '‼', '¶', '§', '▬', '↨', '↑', '↓',
-            '→', '←', '∟', '↔', '▲', '▼', '◆', '◇', '◎', '●', '◢', '◣', '◤', '◥',
-            '░', '▒', '▓', '█', '▄', '▀', '■', '▬', '▭', '▮', '▯', '▰', '▱',
-            
-            // Символы валют
-            '$', '€', '£', '¥', '₽', '₿', '₹', '₩', '₪', '₫', '¢', '₡', '₦',
-            '₱', '₲', '₴', '₵', '₸', '₹', '₺', '₻', '₼', '₽', '₾', '₿',
-            
-            // Стрелки
-            '↑', '↓', '←', '→', '↖', '↗', '↙', '↘', '↺', '↻', '↼', '↽',
-            '↾', '↿', '⇀', '⇁', '⇂', '⇃', '⇄', '⇅', '⇆', '⇇', '⇈', '⇉',
-            '⇊', '⇋', '⇌', '⇍', '⇎', '⇏', '⇐', '⇑', '⇒', '⇓', '⇔', '⇕',
-            
-            // HTML/XML теги
-            '&lt;', '&gt;', '&amp;', '&quot;', '&apos;', '&copy;', '&reg;',
-            '&trade;', '&dollar;', '&euro;', '&pound;', '&yen;', '&sect;',
-            
-            // Символы кода
-            ';', ':', '@', '#', '%', '^', '*', '_', '=', '+', '-', '/', '\\',
-            '~', '`', '"', "'", ',', '.', '|', '¦', '¬', '¯', '˘', '˙', '˚',
-            '˛', 'ˇ', '˝', 'ˉ', 'ˊ', 'ˋ', 'ˌ', 'ˍ', 'ˎ', 'ˏ', 'ː', 'ˑ',
-            
-            // Декоративные символы
-            '❤', '★', '☆', '✿', '❀', '✦', '✧', '✪', '✫', '✬', '✭', '✮', '✯',
-            '✰', '✱', '✲', '✳', '✴', '✵', '✶', '✷', '✸', '✹', '✺', '✻', '✼',
-            '✽', '✾', '✿', '❁', '❂', '❃', '❄', '❅', '❆', '❇', '❈', '❉', '❊',
-            
-            // Технологические символы
-            '</>', '{}', '[]', '()', '=>', '<=', '===', '!==', '&&', '||',
-            '++', '--', '+=', '-=', '*=', '/=', '%=', '**', '//',
-            
-            // Короткие слова и аббревиатуры
-            'JS', 'CSS', 'HTML', 'API', 'WEB', 'DEV', 'CODE', 'DATA', 
-            'CLOUD', 'AI', 'UX', 'UI', 'APP', 'SITE', 'BLOG', 'SHOP',
-            'NEWS', 'BETA', 'ALPHA', 'v1', 'v2', '0.1', '1.0', '2.0',
-            'REACT', 'VUE', 'NODE', 'PY', 'RB', 'PHP', 'SQL', 'NoSQL',
-            'GIT', 'DOCKER', 'AWS', 'CPP', 'JAVA', 'GO', 'RUST', 'SWIFT'
+            '❤', '★', '☆', '✿', '❀', '✦', '✧', 'JS', 'CSS', 'HTML', 'API',
+            '</>', '{}', '[]', '()', '=>', '<=', '===', '!=='
         ];
         
         this.container = document.getElementById('floatingSymbols');
         if (!this.container) {
-            console.warn('Container #floatingSymbols not found, creating one...');
             this.container = document.createElement('div');
             this.container.id = 'floatingSymbols';
             this.container.className = 'floating-symbols';
@@ -80,13 +26,12 @@ class FloatingSymbolsBackground {
         
         this.symbolCount = this.getSymbolCountByScreenSize();
         this.activeSymbols = [];
-        this.animationFrame = null;
         this.isRunning = true;
         
         this.init();
         this.handleResize();
+        this.listenToThemeChanges();
         
-        // Сохраняем экземпляр в глобальную переменную
         window.floatingSymbolsInstance = this;
     }
     
@@ -134,38 +79,18 @@ class FloatingSymbolsBackground {
     createSymbol(direction = 'down') {
         const symbol = document.createElement('div');
         symbol.className = 'floating-symbol';
-        
-        // Случайный символ
         symbol.textContent = this.generateRandomSymbol();
-        
-        // Случайное положение по горизонтали (0-100%)
-        const leftPos = this.generateRandomPosition();
-        symbol.style.left = `${leftPos}%`;
-        
-        // Случайный размер
-        const fontSize = this.generateRandomFontSize();
-        symbol.style.fontSize = `${fontSize}px`;
-        
-        // Случайная прозрачность
+        symbol.style.left = `${this.generateRandomPosition()}%`;
+        symbol.style.fontSize = `${this.generateRandomFontSize()}px`;
         symbol.style.opacity = '0';
-        
-        // Цвет в зависимости от темы
         symbol.style.color = this.getThemeColor();
+        symbol.style.transform = `rotate(${this.generateRandomRotation()}deg)`;
         
-        // Случайное начальное вращение
-        const rotation = this.generateRandomRotation();
-        symbol.style.transform = `rotate(${rotation}deg)`;
-        
-        // Выбор анимации в зависимости от направления
         const animationName = direction === 'down' ? 'floatSymbol' : 'floatSymbolReverse';
         const duration = this.generateRandomDuration();
         const delay = this.generateRandomDelay();
         
         symbol.style.animation = `${animationName} ${duration}s linear ${delay}s infinite`;
-        
-        // Добавляем кастомные свойства для анимации
-        symbol.style.setProperty('--duration', duration);
-        symbol.style.setProperty('--delay', delay);
         
         return symbol;
     }
@@ -173,18 +98,14 @@ class FloatingSymbolsBackground {
     generateSymbols() {
         if (!this.isRunning) return;
         
-        // Очищаем контейнер
         if (this.container) {
             this.container.innerHTML = '';
         }
         this.activeSymbols = [];
         
-        // Обновляем количество символов
         this.symbolCount = this.getSymbolCountByScreenSize();
         
-        // Создаем новые символы
         for (let i = 0; i < this.symbolCount; i++) {
-            // 60% символов летят сверху вниз, 40% снизу вверх
             const direction = Math.random() < 0.6 ? 'down' : 'up';
             const symbol = this.createSymbol(direction);
             if (this.container) {
@@ -227,10 +148,12 @@ class FloatingSymbolsBackground {
         });
     }
     
-    init() {
-        this.generateSymbols();
+    listenToThemeChanges() {
+        window.addEventListener('themeChanged', () => {
+            this.updateThemeColors();
+        });
         
-        // Слушаем изменение темы
+        // Также слушаем изменения класса на body
         const observer = new MutationObserver((mutations) => {
             mutations.forEach((mutation) => {
                 if (mutation.attributeName === 'class') {
@@ -238,8 +161,11 @@ class FloatingSymbolsBackground {
                 }
             });
         });
-        
         observer.observe(document.body, { attributes: true });
+    }
+    
+    init() {
+        this.generateSymbols();
     }
 }
 
@@ -249,7 +175,6 @@ class BackgroundEffectManager {
     constructor() {
         this.isEnabled = true;
         this.button = document.getElementById('toggleBgEffect');
-        this.checkbox = document.getElementById('bgEffectToggle');
         this.bgContainer = document.querySelector('.animated-bg');
         this.symbolsContainer = document.getElementById('floatingSymbols');
         this.floatingSymbolsInstance = null;
@@ -258,11 +183,9 @@ class BackgroundEffectManager {
     }
     
     init() {
-        // Получаем экземпляр FloatingSymbolsBackground
         if (window.floatingSymbolsInstance) {
             this.floatingSymbolsInstance = window.floatingSymbolsInstance;
         } else {
-            // Если еще не создан, ждем
             setTimeout(() => {
                 if (window.floatingSymbolsInstance) {
                     this.floatingSymbolsInstance = window.floatingSymbolsInstance;
@@ -271,10 +194,8 @@ class BackgroundEffectManager {
             }, 100);
         }
         
-        // Загружаем сохраненное состояние из localStorage
         this.loadState();
         
-        // Добавляем обработчик кнопки
         if (this.button) {
             this.button.addEventListener('click', (e) => {
                 e.preventDefault();
@@ -282,18 +203,6 @@ class BackgroundEffectManager {
             });
         }
         
-        // Добавляем обработчик для checkbox
-        if (this.checkbox) {
-            this.checkbox.addEventListener('change', (e) => {
-                if (e.target.checked) {
-                    this.enable();
-                } else {
-                    this.disable();
-                }
-            });
-        }
-        
-        // Добавляем горячую клавишу 'B' для переключения
         document.addEventListener('keydown', (e) => {
             if (e.key === 'b' || e.key === 'B') {
                 this.toggle();
@@ -304,13 +213,8 @@ class BackgroundEffectManager {
     
     loadState() {
         const saved = localStorage.getItem('backgroundEffectEnabled');
-        if (saved !== null) {
-            this.isEnabled = saved === 'true';
-        } else {
-            this.isEnabled = true;
-        }
+        this.isEnabled = saved !== 'false';
         
-        // Применяем состояние с небольшой задержкой
         setTimeout(() => {
             if (!this.isEnabled) {
                 this.disableUI();
@@ -330,13 +234,8 @@ class BackgroundEffectManager {
         
         if (this.floatingSymbolsInstance) {
             this.floatingSymbolsInstance.startAnimation();
-        } else if (this.symbolsContainer) {
-            if (window.floatingSymbolsInstance) {
-                window.floatingSymbolsInstance.startAnimation();
-            }
         }
         
-        // Показываем контейнер
         if (this.bgContainer) {
             this.bgContainer.style.display = 'block';
         }
@@ -346,8 +245,6 @@ class BackgroundEffectManager {
         }
         
         this.updateButtonUI(true);
-        if (this.checkbox) this.checkbox.checked = true;
-        
         this.showToast('✨ Background effects enabled', 'success');
     }
     
@@ -369,8 +266,6 @@ class BackgroundEffectManager {
         }
         
         this.updateButtonUI(false);
-        if (this.checkbox) this.checkbox.checked = false;
-        
         this.showToast('💤 Background effects disabled', 'info');
     }
     
@@ -385,26 +280,31 @@ class BackgroundEffectManager {
     updateButtonUI(enabled) {
         if (!this.button) return;
         
+        const statusSpan = this.button.querySelector('.toggle-status');
+        const icon = this.button.querySelector('i');
+        
         if (enabled) {
             this.button.classList.remove('effects-off');
-            const statusSpan = this.button.querySelector('.toggle-status');
             if (statusSpan) statusSpan.textContent = 'ON';
-            
-            const icon = this.button.querySelector('i');
             if (icon) {
                 icon.className = 'fas fa-circle-check';
-                icon.style.color = '';
-            }       
+            }
+            this.updateTooltip('Disable background animation');
         } else {
             this.button.classList.add('effects-off');
-            const statusSpan = this.button.querySelector('.toggle-status');
             if (statusSpan) statusSpan.textContent = 'OFF';
-            
-            const icon = this.button.querySelector('i');
             if (icon) {
                 icon.className = 'fas fa-circle-xmark';
                 icon.style.color = '#ef4444';
-            }            
+            }
+            this.updateTooltip('Enable background animation');
+        }
+    }
+    
+    updateTooltip(text) {
+        const tooltip = this.button?.querySelector('.tooltip');
+        if (tooltip) {
+            tooltip.textContent = text;
         }
     }
     
@@ -439,7 +339,6 @@ class BackgroundEffectManager {
     }
     
     showToast(message, type = 'info') {
-        // Удаляем существующий тост
         const existingToast = document.querySelector('.toast-notification');
         if (existingToast) existingToast.remove();
         
@@ -476,70 +375,35 @@ class BackgroundEffectManager {
     }
 }
 
-// ===== Добавляем CSS анимации для тостов =====
+// Добавляем CSS анимации
 (function addToastStyles() {
     if (!document.getElementById('toast-animation-styles')) {
         const style = document.createElement('style');
         style.id = 'toast-animation-styles';
         style.textContent = `
             @keyframes slideInRight {
-                from {
-                    opacity: 0;
-                    transform: translateX(100px);
-                }
-                to {
-                    opacity: 1;
-                    transform: translateX(0);
-                }
+                from { opacity: 0; transform: translateX(100px); }
+                to { opacity: 1; transform: translateX(0); }
             }
-            
             @keyframes slideOutRight {
-                from {
-                    opacity: 1;
-                    transform: translateX(0);
-                }
-                to {
-                    opacity: 0;
-                    transform: translateX(100px);
-                }
+                from { opacity: 1; transform: translateX(0); }
+                to { opacity: 0; transform: translateX(100px); }
             }
         `;
         document.head.appendChild(style);
     }
 })();
 
-// ===== Инициализация при загрузке страницы =====
+// Инициализация
 document.addEventListener('DOMContentLoaded', () => {
-    // Небольшая задержка для уверенности, что DOM полностью загружен
     setTimeout(() => {
-        // Инициализируем фон, если еще не создан
         if (!window.floatingSymbolsInstance) {
             new FloatingSymbolsBackground();
         }
-        
-        // Инициализируем менеджер управления, если еще не создан
         if (!window.bgManager) {
             window.bgManager = new BackgroundEffectManager();
         }
     }, 100);
 });
 
-// ===== Дополнительно: обновление при переключении темы =====
-(function initThemeToggle() {
-    // Проверяем, не был ли уже добавлен обработчик
-    if (window.themeToggleHandlerAdded) return;
-    
-    const themeToggleBtn = document.getElementById('toggleTheme');
-    if (themeToggleBtn) {
-        themeToggleBtn.addEventListener('click', () => {
-            setTimeout(() => {
-                if (window.floatingSymbolsInstance) {
-                    window.floatingSymbolsInstance.updateThemeColors();
-                }
-            }, 50);
-        });
-        window.themeToggleHandlerAdded = true;
-    }
-})();
-
-console.log('🎨 Animated background with floating symbols - Ready!');
+console.log('🎨 Animated background - Ready!');
